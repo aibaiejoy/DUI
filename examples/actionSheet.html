@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+    <link rel="stylesheet" href="../dist/css/font-awesome.css">
+    <title>buttons</title>
+    <style type="text/css">
+    body {
+        font-family: "微软雅黑" !important;
+        background-color: #eeeeee;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="ui-top-bar-holder">
+        <header class="ui-topbar">
+            <a class="ui-top-bar-callback">
+                <i class="iconfont icon-angleleft"></i>
+            </a>
+            <h1 class="ui-top-bar-title">actionSheet</h1>
+            <a class="ui-top-bar-link"></a>
+        </header>
+    </div>
+    <div style="margin-top:3rem; width: 100%;height: 100%; padding-top: 1em;background-image: url(img/1.jpg);">
+        <button class="ui-btn" data-toggle="actionSheet" data-target=".ui-actionSheet">弹出actionSheet</button>
+        </br>
+        </br>
+        <button class="ui-btn" data-toggle="actionSheet" data-target=".ui-actionSheetShare">弹出分享</button>
+    </div>
+    <div class="ui-actionSheet">
+        <div data-type="action-panel">
+            <ul>
+                <li>操作1</li>
+                <li>操作2</li>
+                <li>操作3</li>
+                <li>操作4</li>
+                <li>操作5</li>
+                <li>操作6</li>
+            </ul>
+            <div data-type="cancel-btn">取消</div>
+        </div>
+    </div>
+    <div class="ui-actionSheetShare">
+        <ul>
+            <li>
+                <img src="img/share-qq.png" />
+                <span>QQ</span>
+            </li>
+            <li>
+                <img src="img/share-qqzone.png" />
+                <span>QQ空间</span>
+            </li>
+            <li>
+                <img src="img/share-wechat.png" />
+                <span>微信</span>
+            </li>
+            <li>
+                <img src="img/share-frident.png" />
+                <span>朋友圈</span>
+            </li>
+            <li>
+                <img src="img/share-sina.png" />
+                <span>微博</span>
+            </li>
+        </ul>
+    </div>
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+</body>
+<script>
+$(function() {
+    //actionSheet:jump：index是点击第几个按钮，li按钮从1开始，取消按钮是0，点击其他是-1
+    $(".ui-actionSheet").on("actionSheet:show", function(e, l) {
+        console.log("监听开始----");
+    }).on("actionSheet:jump", function(e, index) {
+        console.log("监听关闭----");
+        console.log(index);
+    })
+
+    $(".ui-actionSheetShare").on("actionSheet:show", function(e, l) {
+        console.log("监听开始2----");
+    }).on("actionSheet:jump", function(e, index) {
+        console.log("监听关闭2----");
+        console.log(index);
+    })
+})
+</script>
+
+</html>

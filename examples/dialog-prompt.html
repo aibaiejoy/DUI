@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>dialog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+   
+</head>
+
+<body class="container">
+    <header class="ui-nav-bar">
+        <div class="ui-nav-bar-inner">
+            <a class="ui-action-back ui-nav-bar-link">
+                <i class="ui-nav-bar-icon ui-nav-bar-left ui-icon-left-nav"></i>
+            </a>
+            <h1 class="ui-nav-bar-title">dialog</h1>
+            <a class="ui-nav-bar-link"></a>
+        </div>
+    </header>
+    <div class="content">
+        
+    </div>
+    <a href=".ui-dialog" class="ui-btn" data-toggle="dialog" data-show="true" data-target=""> 弹窗 </a>
+    <div class="ui-dialog fade">
+        <div class="dialog-panel">
+            <div class="dialog-title">
+            标题
+            </div>
+            <div class="dialog-content">
+                <input type="text" placeholder="一个输入文本框">
+            </div>
+            <div class="dialog-footer">
+                <span class="dialog-btn" data-action="cancel">取消</span>
+                <span class="dialog-btn" data-action="confirm">确定</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+    <script>
+    $(function() {
+        //dialog通用api，根据实际需求调整
+        $('.ui-dialog')
+        .on('dialog:cancel', function(e){
+            console.log('cancel', e)
+            $(this).dialog('hide');
+        }).on('dialog:jump', function(e){
+            console.log('jump', e)
+            $(this).dialog('hide');
+        }).on('dialog:confirm', function(e){
+            //确认是通过dom获取输入的值
+            var val = $(this).find('input').val();
+            console.log('confirm', val)
+            $(this).dialog('hide');
+        }).on('dialog:show', function(e, data){
+            console.log('show', this, e, data)
+        }).on('dialog:hide', function(e){
+            console.log('hide', this, e)
+        }).off('dialog')
+    });
+    </script>
+</body>
+
+</html>

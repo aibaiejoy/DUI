@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+    
+    <title>render</title>
+</head>
+<body style="height: 346px; ">
+	<div class="container-flex">
+		<div class="ui-top-bar-holder">
+			<header class="ui-top-bar">
+				<h1 class="ui-top-bar-title">列表</h1>
+			</header>
+		</div>
+		<section class="content">
+			<div id="DataBindDemo">
+		    	<div class="ui-listview-threeline">
+					<div class="ui-listview-img">
+						<img src="" ng-model="src:,content:">
+					</div>
+					<div class="ui-listview-content">
+						<div class="ui-content-title" ng-model="content:name"></div>
+						<div class="ui-content-body">
+							<span ng-model="content:notes"></span>
+							<a href="" ng-model="href:linkUrl, content:notes"></a>
+							<input ng-model="value:value"></input>
+							<button ng-model="value:name"></button>
+						</div>
+						<div class="ui-content-remarks">
+							<div>
+								<span>这是一个id：</span>
+								<span ng-model="content:id"></span>
+							</div>
+							<span>08:20</span>
+						</div>
+						<div class="ui-content-remarks">
+							<div>
+								<span>描述，包含html标签：</span>
+								<!-- 这里支持两种方式-->
+								<span ng-model="content:des"></span>
+							</div>
+							<p ng-model="content:des"></p>
+							<span>08:20</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+</body>
+<script src="../assets/libs/zepto.js"></script>
+<script src="../assets/libs/dt.js"></script>
+<script src="../dist/js/d6.js"></script>
+
+    
+    <script function-name="view">
+
+		function view(){
+			var config = {
+				uiType : 'listview',
+				method : 'search',
+				server : {
+					url : 'http://192.168.180.11:8080/test/cloud/user/getreslist',
+					type : 'post',
+					eventName : 'onclick',
+					entityName : 'user'
+				},
+				orderRule : {
+					property : 'id',
+					order : 'DESC'
+				},
+				limitRule : {
+					limit : '10'
+				},
+				tempName : 'temp1',
+				maps : [{
+					entity : 'name',
+					dom : 'names'
+				}, {
+					entity : 'notes',
+					dom : 'notes'
+				}]
+			};
+			$("#DataBindDemo").generate({
+				config : config
+			})
+		}
+		view()
+	</script>
+</html>

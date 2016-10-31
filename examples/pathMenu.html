@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+    <title>buttons</title>
+    <style type="text/css">
+    body {
+        font-family: "微软雅黑" !important;
+        background-color: #eeeeee;
+    }
+    
+    ul {
+        color: #0662A6;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="ui-top-bar-holder">
+        <header class="ui-topbar">
+            <a class="ui-top-bar-callback">
+                <i class="iconfont icon-angleleft"></i>
+            </a>
+            <h1 class="ui-top-bar-title">pathMenu</h1>
+            <a class="ui-top-bar-link">
+            </a>
+        </header>
+    </div>
+    <div>
+        <img src="img/1.jpg"/>
+    </div>
+    <div class="ui-pathmenu">
+        <input id="pathmenu" type="checkbox" class="uhide" />
+        <ul>
+            <li class="pathmenu1" data-toggle="pathmenuBtn1"><i class="iconfont icon-gift"></i></li>
+            <li class="pathmenu2" data-toggle="pathmenuBtn2"><i class="iconfont icon-share-blank"></i></li>
+            <li class="pathmenu3" data-toggle="pathmenuBtn3"><i class="iconfont icon-user-footer"></i></li>
+            <li class="pathmenu4" data-toggle="pathmenuBtn4"><i class="iconfont icon-coffee"></i></li>
+            <li class="pathmenu5" data-toggle="pathmenuBtn5"><i class="iconfont icon-lock"></i></li>
+            <li class="pathmenu6" data-toggle="pathmenuBtn6"><i class="iconfont icon-search"></i></li>
+            <div data-toggle="pathmenuBtn" data-target="#pathmenu">
+                <i class="iconfont icon-jia"></i>
+            </div>
+        </ul>
+    </div>
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+    <script>
+    $(function() {
+        $("#pathmenu").on("pathMenu:show", function() {
+        	console.log("aaaa")
+            console.log("监听开始----");
+        }).on("pathMenu:hide", function(e,index) {
+            console.log("监听关闭----");
+            console.log(index)
+        })
+    });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+/*Corner     圆形、矩形角标
+ * @param   @position              角标位置[topLeft,topRight,bottomLeft,bottomRight]
+ * @param   @height                角标高
+ * @param   @padding-horizontal    角标距左右边距
+ * @param   @bg-color              角标背景颜色
+ * @param   @color                 角标字体颜色
+ * @param   @size                  角标文字大小
+ * @param   @border-radius         角标圆角
+ */
+
+.Corner(@position;@height;@padding-horizontal;@bg-color;@color;@size;@border-radius){
+    position: relative;
+    float: left;
+    & span[data-type=corner]{
+        position: absolute;
+        & when (@position=topLeft){
+            top: 0;
+            left: 0;
+        }
+        & when (@position=topRight){
+            top: 0;
+            right: 0;
+        }
+        & when (@position=bottomLeft){
+            bottom: 0;
+            left: 0;
+        }
+        & when (@position=bottomRight){
+            bottom: 0;
+            right: 0;
+        }
+        height: @height;
+        line-height: @height;
+        min-width: @height;
+        text-align: center;
+        padding: 0 @padding-horizontal;
+        background-color: @bg-color;
+        border-radius: @border-radius;
+        z-index: 6;
+        color: @color;
+        font-size: @size;
+    }
+}
+/*CornerTriangle      三角形角标
+ * @param   @position              位置[topLeft,topRight,bottomRight]
+ * @param   @height                高
+ * @param   @bg-color              背景颜色
+ * @param   @color                 颜色
+ * @param   @size                  文字大小
+ * @param   @padding-top           文字上边距
+ */
+   
+.CornerTriangle(@position;@height;@bg-color;@color;@size;@padding-top){
+    @width : @height*2;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    & span[data-type=corner]{
+        position: absolute;
+        & when (@position=topLeft){
+            top: -@width/10;
+            left: -@width/3;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        & when (@position=topRight){
+            top: -@width/10;
+            right: -@width/3;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+        
+        & when (@position=bottomRight){
+            bottom: -@width/10;
+            right: -@width/3;
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+        height: @height;
+        line-height: @size;
+        text-align: center;
+        padding-top: @padding-top;
+        width: @width;
+        background-color: @bg-color;
+        z-index: 6;
+        color: @color;
+        font-size: @size;
+           
+    }
+}
+    

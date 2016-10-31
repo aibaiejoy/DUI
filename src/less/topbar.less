@@ -1,0 +1,18 @@
+	/*
+	background: #0096FF;  	背景
+	position:relative;     	定位
+	top:0px;               	居上位置
+	left:0px;			   
+	width: 100%;    		宽度
+	height:50px;   			高度
+	font-size:14px;  		字体大小
+	color:#fff;   			字体颜色
+	line-height:50px;  		行高
+	*/
+	.ui-topbar {
+	    .TopBar( @topbar-background, @topbar-position, @topbar-top, @topbar-left, @topbar-width, @topbar-height, @topbar-font-size, @topbar-line-height, @topbar-color);
+	}
+	//占位符，防止top-bar 盖住正文内容
+	.ui-top-bar-holder{
+		height: @topbar-height;
+	}

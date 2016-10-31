@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+    <style type="text/css" media="screen">
+    body {
+        margin-bottom: 100px;
+    }
+    
+    .bottom-nav {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="ui-navDefault">
+        <nav class="tabbar" data-target="test">
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">tab1</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                        <span class="ui-nav-text">tab2 </span>
+                </span>
+            </a>
+            <a class="ui-nav-item active">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">tab3</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">tab4</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">tab5</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">tab6</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">tab7</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">tab8</span>
+                </span>
+            </a>
+        </nav>
+    </div> 
+    <div id="test" class="swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                tab1内容…
+            </li>
+            <li class="swiper-slide">
+                tab2内容…
+            </li>
+            <li class="swiper-slide">
+                tab3内容…
+            </li>
+            <li class="swiper-slide">
+               tab4内容…
+            </li>
+            <li class="swiper-slide">
+                tab5内容…
+            </li>
+            <li class="swiper-slide">
+                tab6内容…
+            </li>
+        </ul>
+    </div>
+    <br>
+    <h1>文字导航</h1>
+    <div class="ui-navDefault">
+        <nav class="tabbar" data-target="aa">
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                <span class="ui-nav-text">国内</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">国际</span>
+                </span>
+            </a>
+            <a class="ui-nav-item active">
+                <span class="ui-nav-cont">
+                <span class="ui-nav-text" dt-src="nm">社会</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                <span class="ui-nav-text">体育</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                <span class="ui-nav-text">财经</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                <span class="ui-nav-text">娱乐</span>
+                </span>
+            </a>
+        </nav>
+    </div>
+    <div id="aa" class="swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                国内新闻
+            </li>
+            <li class="swiper-slide">
+                国际新联
+            </li>
+            <li class="swiper-slide">
+                社会新闻
+            </li>
+            <li class="swiper-slide">
+                体育新闻
+            </li>
+            <li class="swiper-slide">
+                财经新闻
+            </li>
+            <li class="swiper-slide">
+                娱乐新闻
+            </li>
+        </ul>
+    </div>
+    <br>
+    <h1>导航分割线头部划线</h1>
+    <br>
+    <div class="ui-navRedTopLine">
+        <nav class="tabbar">
+            <a class="ui-nav-item active">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">首页</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                     <span class="ui-nav-text">消息</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <span class="ui-nav-text">通讯录</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                     <span class="ui-nav-text">设置</span>
+                </span>
+            </a>
+        </nav>
+        <div class="tabbarcont"></div>
+    </div>
+    <br>
+    <br>
+    <h1>图文左右组合</h1>
+    <br>
+    <div class="ui-navNoLine">
+        <nav class="tabbar">
+            <a class="ui-nav-item active">
+                <span class="ui-nav-cont">
+                    <i class=" iconfont icon-woman"></i>
+                    <span class="ui-nav-text">首页</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <i class=" iconfont icon-woman"></i>
+                     <span class="ui-nav-text">消息</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <i class=" iconfont icon-woman"></i>
+                   <span class="ui-nav-text">通讯录</span>
+                </span>
+            </a>
+            <a class="ui-nav-item">
+                <span class="ui-nav-cont">
+                    <i class=" iconfont icon-woman"></i>
+                  <span class="ui-nav-text">设置</span>
+                </span>
+            </a>
+        </nav>
+    </div>
+    <br>
+    <br>
+    <h1>图文上下组合</h1>
+    <br>
+    <div class="ui-navTBLineIcon">
+        <nav class="tabbar">
+            <a class="col-xs-4 ui-nav-item active">
+                <span class="ui-nav-cont">
+                    <dl class="ui-nav-dl">
+                        <dt><i class=" iconfont icon-woman"></i></dt>
+                        <dd>首页</dd>
+                    </dl>
+                </span>
+            </a>
+            <a class="col-xs-4 ui-nav-item">
+                <span class="ui-nav-cont">
+                    <dl class="ui-nav-dl">
+                        <dt><i class=" iconfont icon-woman"></i></dt>
+                        <dd>新闻</dd>
+                    </dl>
+                </span>
+            </a>
+            <a class="col-xs-4 ui-nav-item">
+                <span class="ui-nav-cont">
+                    <dl class="ui-nav-dl">
+                        <dt><i class=" iconfont icon-woman"></i></dt>
+                        <dd>美女</dd>
+                    </dl>
+                </span>
+            </a>
+            <a class="col-xs-4 ui-nav-item">
+                <span class="ui-nav-cont">
+                    <dl class="ui-nav-dl">
+                        <dt><i class=" iconfont icon-woman"></i></dt>
+                        <dd>教育</dd>
+                    </dl>
+                </span>
+            </a>
+            <a class="col-xs-4 ui-nav-item">
+                <span class="ui-nav-cont">
+                    <dl class="ui-nav-dl">
+                        <dt><i class=" iconfont icon-woman"></i></dt>
+                        <dd>社会</dd>
+                    </dl>
+                </span>
+            </a>
+        </nav>
+    </div>
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+    <script type="text/javascript">   
+    //选项卡滚动
+    $(".ui-navDefault").tabbar({
+        active: 0
+    }).on("switch", function(e, ele) {
+        console.log(ele);
+    })
+
+    $(".ui-navNoLine").tabbar({
+        active: 0
+    }).on("switch", function(e, ele) {
+        console.log(ele);
+    })
+    
+    </script>
+</body>
+
+</html>

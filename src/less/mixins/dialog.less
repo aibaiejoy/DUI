@@ -1,0 +1,80 @@
+.ui-dialog(){
+	position: absolute;
+	top:0px;
+	left:0px;
+	height: 100vh;
+	width:100%;
+	background-color: rgba(0, 0, 0, 0.4);
+
+	&.fade{
+		display: none;
+	}
+
+
+	.dialog-panel{
+		position: absolute;
+		border-radius: 6px;
+		background-color: #fff;
+		border:1px solid #eee;
+		margin: 0px auto;
+		width:260px;
+		top:50%;
+		left:50%;
+		-webkit-transform: translate(-50%, -50%);	
+		transform: translate(-50%, -50%);	
+		text-align: center;
+	}
+	.dialog-content{
+		margin:20px 0;
+		text-align: center;
+		input{
+			border:1px solid #ccc;
+			height: 26px;
+			line-height: 26px;
+		}
+	}
+
+	.dialog-title{
+		font-size: 16px;
+		font-weight: bold;
+		margin-top:12px;
+	}
+
+	.dialog-footer{
+		height: 40px;
+		line-height: 40px;
+		.display-flex();
+	}
+
+	.dialog-btn{
+		.flex();
+		border: 1px solid #ccc;
+		color:#0096ff;
+		cursor:pointer;
+		&.taped{
+			background-color: #e5e5e5;
+		}
+	}
+	.dialog-btn{
+		border-width:1px 1px 0 0px;
+	}
+
+	.dialog-btn:last-child{
+		border-right-width:0px;
+	}
+}
+
+.Dialog(@bgColor:#fff, @borderColor:#fff, @tapedColor:#e5e5e5, @btnTextColor:#0096ff, @btnBorderColor:#ccc){
+	.ui-dialog();
+	.dialog-panel{
+		background-color: @bgColor;
+		border-color:@borderColor;
+	}	
+	.dialog-btn{
+		color: @btnTextColor;
+		border-color:@btnBorderColor;
+		&.taped{
+			background-color: @tapedColor;
+		}
+	}
+}

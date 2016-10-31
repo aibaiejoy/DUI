@@ -1,0 +1,31 @@
+/*
+ *   @author : 李光
+ *.container 可选值为container 和 container-flex；
+*/
+.container{
+
+}
+/*
+	定义伸缩盒的容器，此容器总高度为窗口高度，底部区域不能随内容高度向下撑开。仅适合在window嵌套popover
+*/
+.container-flex{
+    height: 100vh;
+    overflow: hidden;
+    .display-flex;
+    .flex-direction(column);
+
+    .content{
+    	.flex(1);
+    }
+}
+
+.container-content, .content{
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.container-footer, .footer{
+	background: #fff;
+	width: 100%;
+}

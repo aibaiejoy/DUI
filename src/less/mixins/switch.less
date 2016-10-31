@@ -1,0 +1,132 @@
+/*
+    @author : 李光
+*/
+.ui-switch{
+    width:74px;
+    height:30px;
+    position: relative;
+    display: block;
+    background-color: #bababa;
+    background-clip: padding-box;
+    border: 1px solid #ddd;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-transition-property: background-color, border;
+    transition-property: background-color, border;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &:before{
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding-top:2px;
+        right: 11px;
+        font-size: 13px;
+        color: #999;
+        text-transform: uppercase;
+        content: "Off";
+    }
+
+    .switch-handle {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 1;
+        width: 28px;
+        height: 28px;
+        background-color: #fff;
+        background-clip: padding-box;
+        -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .4);
+        -webkit-transition: .2s ease-in-out;
+        transition: .2s ease-in-out;
+        -webkit-transition-property: -webkit-transform, width,left;
+        transition-property:         transform, width,left;
+    }
+
+    &.switch-active{
+        background-color: #0096ff;
+        border-color:#0096ff;
+        &:before{
+            right: auto;
+            left: 15px;
+            color: #fff;
+            content: "On";
+        }
+        .switch-handle {
+            -webkit-transform: translate3d(43px, 0, 0);
+            transform: translate3d(43px, 0, 0);
+        }
+    }
+}
+
+/* === switch === */
+/* blue theme 蓝色主题, 
+
+    参数：@theme 主题类型
+          @width 宽度
+          @height 高度
+          @bgColor 背景颜色
+          @bgActiveColor 背景激活状态颜色
+          @frontColor 前景颜色
+          @frontActiveColor 前景激活颜色
+          @radius 圆角
+ */
+.Switch(
+    @theme:default,
+    @width:74px,
+    @height:30px,
+    @bgColor:#fff,
+    @bgActiveColor:#0096ff,
+    @frontColor:#fff,
+    @frontActiveColor:#fff,
+    @radius:3px) {
+
+    .ui-switch();
+
+    width: @width;
+    height: @height;
+    background-color: @bgColor;
+    border-radius: @radius;
+    .switch-handle{
+        height: @height - 2;
+        width: @height - 2;
+        background-color: @frontColor;
+        border-radius: @radius;
+    }
+    
+    &.switch-active{
+        background-color: @bgActiveColor;
+        border-color: @bgActiveColor;
+        .switch-handle{
+            background-color: @frontActiveColor;
+        }
+        
+    }
+}
+
+.Switch( 
+    @theme:mini,
+    @width:74px,
+    @height:30px,
+    @bgColor:#fff,
+    @bgActiveColor:#0096ff,
+    @frontColor:#fff,
+    @frontActiveColor:#fff,
+    @radius:3px ) when(@theme = mini){
+    
+    width: 47px;
+    
+    &.switch-active .switch-handle {
+        -webkit-transform: translate3d(16px, 0, 0);
+        transform: translate3d(16px, 0, 0);
+    }
+
+    &:before {
+        display: none;
+    }
+}

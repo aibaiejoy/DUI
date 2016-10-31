@@ -1,0 +1,40 @@
+/*ui-corner  圆点
+ * @param   @position              位置[topLeft,topRight,bottomLeft,bottomRight]
+ * @param   @height                高                      0.8em
+ * @param   @padding-horizontal    左右边距            0 
+ * @param   @bg-color              背景颜色             #ff0000
+ * @param   @color                 颜色                   #ffffff
+ * @param   @size                  文字大小             1em
+ * @param   @border-radius         圆角                   50%
+ */
+
+.ui-corner{
+    .Corner(topRight;0.6em;0;#ff0000;#ffffff;1em;50%);
+}
+
+/*ui-corner-rectangle  三角
+ * @param   @position              位置[topLeft,topRight,bottomRight]
+ * @param   @height                高                     2em
+ * @param   @bg-color              背景颜色           #ff0000
+ * @param   @color                 颜色                  #ffffff
+ * @param   @size                  文字大小           1em
+ * @param   @padding-top           文字上边距        0.9em
+ */ 
+.ui-cornerTriangle{
+    .CornerTriangle(topRight;2em;#ff0000;#ffffff;1em;0.9em);
+}
+
+
+/*ui-corner-rectangle   方形
+ * @param   @position              位置[topLeft,topRight,bottomLeft,bottomRight]
+ * @param   @height                高                    1.6em
+ * @param   @padding-horizontal    左右边距         0.5em
+ * @param   @bg-color              背景颜色         #0195ff
+ * @param   @color                 颜色               #ffffff
+ * @param   @size                  文字大小         0.8125em
+ * @param   @border-radius         圆角               0
+ */
+.ui-cornerRectangle{
+    .Corner(topRight;1.6em;0.5em;#0195ff;#ffffff;0.8125em;0)
+}
+

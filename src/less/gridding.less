@@ -1,0 +1,58 @@
+/*
+    time:2016-07-08
+    autor:maweichao
+    desc:
+    width: auto;          容器总宽度
+    height: auto;          容器总高度
+    border: none|颜色值;   容器边框
+    background: #f2f2f2;   容器背景
+    min-height: 200px;     容器最小高度
+    text-align: center;    字体居中
+    border-radius: 10px;   圆角
+    box-shadow: false;     是否阴影
+    
+    @GriddingCell-width: 100%;  宽度
+    @GriddingCell-height: auto; 高度
+    @GriddingCell-border-color: #eee; 九宫格边框
+    @GriddingCell-background: #f2f2f2; 背景
+    @GriddingCell-min-height: 50px; 最小高度
+    @GriddingCell-overflow: true|false;  超出是否隐藏
+ */
+ 
+.ui-box {
+    .Gridding(
+        @gridding-width,
+        @gridding-height,
+        @gridding-border-color,
+        @gridding-background,
+        @gridding-min-height,
+        @gridding-text-align,
+        @gridding-border-radius,
+        @gridding-is-shadow, 
+        @GriddingCell-border-color,
+        @GriddingCell-background,
+        @GriddingCell-min-height,
+        @GriddingCell-overflow,
+    )
+}
+
+/*
+    time:2016-07-08
+    autor:maweichao
+    desc:
+    width: 100%;  宽度
+    height: auto; 高度
+    border-color: #eee; 九宫格边框
+    background: #f2f2f2; 背景
+    min-height: 50px; 最小高度
+    overflow: true|false;  超出是否隐藏
+ */
+ 
+.ui-boxCircle{
+    .GriddingCell(
+    @GriddingCell-border-color,
+    @GriddingCell-background,
+    @GriddingCell-min-height,
+    @GriddingCell-overflow,
+    );
+}

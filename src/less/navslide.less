@@ -1,0 +1,23 @@
+/*
+	time:2016-09-05
+	author:maweichao 
+	desc:     
+		变量									 	 	描述：             可选值
+
+		@navSlide-width: 100%; 							 宽度				
+		@navSlide-height: 50px; 						 高度
+		@navSlide-cont-background: #fff;				内容背景	
+		@navSlide-operation-background: #ea3d44; 		操作背景	
+		@navSlide-font-size: 14px;						字体大小		
+		@navSlide-color: #fff; 							颜色				
+		@navSlide-ispoint: right;						操作位置			right|left
+		@navSlide-is-hr: true;							是否有分割线		true|false
+ */
+
+.navslide-list {
+    .navSlide( @navSlide-width, @navSlide-height, @navSlide-cont-background, @navSlide-operation-background, @navSlide-font-size, @navSlide-color, @navSlide-ispoint, @navSlide-is-hr);
+}
+
+.navslide-test {
+    .navSlide( @navSlide-width, @navSlide-height, @navSlide-cont-background, @navSlide-operation-background, @navSlide-font-size, @navSlide-color, left, @navSlide-is-hr);
+}

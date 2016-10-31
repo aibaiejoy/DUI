@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../dist/css/d6.css" rel="stylesheet" />
+		<link href="../dist/css/d6-themes.css" rel="stylesheet" />
+		<style>
+			.ui-btn {
+				font-size: 16px;
+				padding: 8px;
+				margin: 3px;
+			}
+			h5.mui-content-padded {
+				margin-left: 3px;
+				margin-top: 20px !important;
+			}
+			h5.mui-content-padded:first-child {
+				margin-top: 12px !important;
+			}
+			.ui-alert {
+				text-align: center;
+				padding: 20px 10px;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">picker（选择器）</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<h5 class="mui-content-padded">普通示例</h5>
+				<button id='showUserPicker' data-toggle="cityPicker" class="ui-btn ui-btn-block" type='button'>一级选择示例 ...</button>
+				<div id='userResult' class="ui-alert"></div>
+				<h5 class="mui-content-padded">级联示例</h5>
+				<button id='showCityPicker' data-toggle="cityPicker" data-layer="2" class="ui-btn ui-btn-block" type='button'>二级联动示例 ...</button>
+				<div id='cityResult' class="ui-alert"></div>
+				<button id='showCityPicker3' data-toggle="cityPicker" data-layer="3" data-theme="ui-citypicker-red" class="ui-btn ui-btn-block" type='button'>三级联动示例 ...</button>
+				<div id='cityResult3' class="ui-alert"></div>
+			</div>
+		</div>
+		
+		<script src="../assets/libs/zepto.js"></script>
+		<script src="../dist/js/d6.js"></script>
+
+		<script src="../src/js/city.data.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../src/js/city.data-3.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			(function($, doc) {
+				$(function() {
+					$('#showUserPicker').cityPicker("setData", [{
+							value: 'ywj',
+							text: '董事长 叶文洁'
+						}, {
+							value: 'aaa',
+							text: '总经理 艾AA'
+						}, {
+							value: 'lj',
+							text: '罗辑'
+						}, {
+							value: 'ymt',
+							text: '云天明'
+						}, {
+							value: 'shq',
+							text: '史强'
+						}, {
+							value: 'zhbh',
+							text: '章北海'
+						}, {
+							value: 'zhy',
+							text: '庄颜'
+						}, {
+							value: 'gyf',
+							text: '关一帆'
+						}, {
+							value: 'zhz',
+							text: '智子'
+						}, {
+							value: 'gezh', 
+							text: '歌者'
+						}]).on('ok', function(event){
+							var items = event.detail;
+							userResult.innerText = JSON.stringify(items[0]);
+
+							// 隐藏 picker
+							$(this).cityPicker('hide')
+						})
+
+					var cityResult2 = doc.getElementById('cityResult3');
+					var cityResult3 = doc.getElementById('cityResult3');
+					
+
+					$('#showCityPicker').on('ok', function(event){
+						//也可以使用自定义事件，在显示后触发事件，通过event.detail可以拿到选中的内容
+						console.log(event.detail, "show event")
+						var items = event.detail;
+						cityResult.innerText = "你选择的城市是:" + (items[0] || {}).text + " " + (items[1] || {}).text
+						$(this).cityPicker('hide')
+					});
+
+					$('#showCityPicker3').on('ok', function(event){
+						//也可以使用自定义事件，在显示后触发事件，通过event.detail可以拿到选中的内容
+						console.log(event.detail, "show event")
+						var items = event.detail;
+						
+						cityResult3.innerText = "你选择的城市是:" + (items[0] || {}).text + " " + (items[1] || {}).text + " " + ((items[2] || {}).text || "")
+						$(this).cityPicker('hide')
+					});
+				});
+				
+				
+			})(Zepto, document);
+		</script>
+	</body>
+
+</html>

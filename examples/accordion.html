@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello UI Accordion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <script type="text/javascript"></script>
+    <link rel="stylesheet" href="../dist/css/d6.css">
+</head>
+
+<body>
+    <div class="ui-top-bar-holder">
+        <header class="ui-topbar">
+            <a class="ui-top-bar-callback">
+                返回
+            </a>
+            <h1 class="ui-top-bar-title">Accordion</h1>
+            <a class="ui-top-bar-link">连接</a>
+        </header>
+    </div>
+    <h1 style="margin:10px 15px">内容为列表</h1>
+    <div class="ui-accordion">
+        <ul class="ui-accordion-ul">
+            <li class="ui-accordion-li">
+                <a class="ui-accordion-li-link ui-accordion-li-link-active" data-toggle="collapse" data-target="#context">
+                    <span ng-model="content:">
+                       标题1
+                    </span>
+                </a>
+                <div class="ui-accordion-li-content active" id="context">
+                    <ul class="ui-accordion-ul">
+                        <li class="ui-accordion-li">
+                            <a class="ui-accordion-li-link" data-toggle="collapse" data-target="#context1">
+                                <span ng-model="content:">
+                                    标题2
+                                </span>
+                            </a>
+                        </li>
+                        <li class="ui-accordion-li">
+                            <a class="ui-accordion-li-link" data-toggle="collapse" data-target="#context1">
+                                <span ng-model="content:">
+                                    标题3
+                                </span>
+                            </a>
+                        </li>
+                        <li class="ui-accordion-li">
+                            <a class="ui-accordion-li-link" data-toggle="collapse" data-target="#context1">
+                                <span ng-model="content:">
+                                    标题4
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <h1 style="margin:10px 15px">内容为图片</h1>
+    <div class="ui-accordion">
+        <ul class="ui-accordion-ul">
+            <li class="ui-accordion-li">
+                <a class="ui-accordion-li-link" data-toggle="collapse" data-target="#img">
+                    <span ng-model="content:">
+                       标题5
+                    </span>
+                </a>
+                <div class="ui-accordion-li-content" id="img">
+                    <img src="img/1.jpg" ng-model="src:">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <h1 style="margin:10px 15px">内容为纯文本</h1>
+    <div class="ui-accordion">
+        <ul class="ui-accordion-ul">
+            <li class="ui-accordion-li">
+                <a class="ui-accordion-li-link" data-toggle="collapse" data-target="#other">
+                    <span ng-model="content:">
+                        标题6
+                    </span>
+                </a>
+                <div class="ui-accordion-li-content" id="other">
+                    <p ng-model="content:">
+                        此处文本内容...
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+</body>
+<script>
+/*$(function() {
+    $('.ui-accordion').accordion({
+        toggleClose: true
+    });
+    $('.ui-accordion').on('open', function(e, el) {
+        console.log('open')
+    }).on('opened', function(e, el) {
+        console.log('opened')
+    }).on('close', function(e, el) {
+        console.log('close')
+    }).on('closed', function(e, el) {
+        console.log('closed')
+    })
+    $('#context').collapse();
+})*/
+
+$(function() {
+
+    $("#context").on("show:collapse", function() {
+        console.log("监听打开");
+
+    }).on("hide:collapse", function() {
+        console.log("监听关闭");
+    })
+
+})
+</script>
+
+</html>

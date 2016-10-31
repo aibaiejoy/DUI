@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+    <title>buttons</title>
+    <style type="text/css">
+    body {
+        font-family: "微软雅黑" !important;
+        background-color: #eeeeee;
+    }
+    
+    .padd-default {
+        padding: 0.5em;
+    }
+    
+    .padd-lr-default {
+        padding: 0 .5em;
+    }
+    
+    .mar-t-lg {
+        margin-top: 1em;
+    }
+    
+    .mar-lr-lg {
+        margin: 0 1em;
+    }
+    
+    .mar-t-default {
+        margin-top: .5em;
+    }
+    
+    .box {
+        display: -webkit-box !important;
+        display: box !important;
+        display: -webkit-flex;
+        display: flex;
+        position: relative;
+    }
+    /*垂直方向排列方式*/
+    
+    .box-align-start {
+        -webkit-box-align: start;
+        box-align: start;
+    }
+    
+    .box-align-center {
+        -webkit-box-align: center;
+        box-align: center;
+    }
+    
+    .box-align-end {
+        -webkit-box-align: end;
+        box-align: end;
+    }
+    /*水平方向排列方式*/
+    
+    .box-pack-start {
+        -webkit-box-pack: start;
+        box-pack: start;
+    }
+    
+    .box-pack-center {
+        -webkit-box-pack: center;
+        box-pack: center;
+    }
+    
+    .box-pack-end {
+        -webkit-box-pack: end;
+        box-pack: end;
+    }
+    /*平均分配*/
+    
+    .box-pack-justify {
+        -webkit-box-pack: justify;
+        box-pack: justify;
+    }
+    /*垂直排列*/
+    
+    .box-orient-vertical {
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+    }
+    /*反向排列*/
+    
+    .box-direction-reverse {
+        -webkit-box-direction: reverse;
+        box-direction: reverse;
+    }
+    /*盒子伸缩比例*/
+    
+    .box-flex-1 {
+        position: relative;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+    
+    </style>
+</head>
+
+<body>
+    <div class="ui-top-bar-holder">
+    <header class="ui-topbar">
+        <a class="ui-top-bar-callback">
+    	 		<i class="iconfont icon-angleleft"></i> 
+            </a>
+        <h1 class="ui-top-bar-title">inputs</h1>
+        <a class="ui-top-bar-link"></a>
+    </header>
+</div>
+    <div style="padding: 0 1em;">
+	    <div class="mar-t-lg">复选框</div>
+	    <input type="checkbox"  class="ui-checkbox"/>
+	    <div class="mar-t-lg">组合复选框</div>
+	    <label class="ui-checkboxGroup">
+	    	<input type="checkbox"/>
+	    	<span>组合复选框</span>
+	    </label>
+	    
+		<div class="mar-t-lg">单选框</div>
+		<input type="radio" name="radioName" class="ui-radio"/>
+		
+		<div class="mar-t-lg">组合单选框</div>
+		<label class="ui-radioGroup">
+	    	<input type="radio" name="radioName"/>
+	    	<span>组合单选框1</span>
+	    </label>
+		<label class="ui-radioGroup">
+	    	<input type="radio" name="radioName"/>
+	    	<span>组合单选框2</span>
+	    </label>
+	    
+	    <div class="mar-t-lg">输入框</div>
+	    <div class="mar-t-lg" style="width: 100%;">
+	        <input type="text" placeholder="请输入..." value="" class="ui-input" />
+	    </div>
+	    
+	    <div class="mar-t-lg">带图标输入框</div>
+	    <div class="mar-t-lg" style="width: 100%;">
+	        <div class="ui-inputGroup">
+	            <i class="iconfont-gray icon-user-footer"></i>
+	            <input type="text" placeholder="请输入..." />
+	        </div>
+	    </div>
+	    
+	    <div class="mar-t-lg">搜索框</div>
+	    <div class="mar-t-lg" style="width: 100%;">
+	        <div class="ui-inputSearch">
+	            <input type="search" placeholder="请输入..."/>
+	        </div>
+	    </div>
+	    
+	    <div class="mar-t-lg">输入域</div>
+	    <div class="mar-t-lg" style="width: 100%">
+	        <textarea class="ui-textarea" placeholder="请输入..." /></textarea>
+	    </div>
+   	</div>
+	
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>      
+</body>
+
+</html>

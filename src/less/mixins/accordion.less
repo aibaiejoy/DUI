@@ -1,0 +1,112 @@
+
+.Accordion(@title-background: #0096ff, @cotent-background: #0096ff, @color: #fff,
+ @font-size: 14px, @hover-background: #0096ff, @hover-color: #fff,
+  @top-spacing:0px, @border-radius:5px,@isfirstIcon: false,@iconColor:#eee, @is-lastIcon: false) {
+    overflow-y: scroll;
+    width: 100%;
+    min-height: 100.1%;
+    >.ui-accordion-ul {
+        .ui-accordion-li {
+            line-height: 35px;
+            width: 100%;
+            width: 100%;
+            & when (ispixel(@top-spacing)),
+            (isem(@top-spacing)) {
+                margin-top: @top-spacing;
+                &:first-child{
+                  margin-top:0px;
+                }
+            }
+
+            .ui-accordion-li-link {
+                & when(@isfirstIcon =true) {
+                    &:before {
+                        display: inline-block;
+                        content: "\e669";
+                        margin-right: 5px;
+                        .iconfont;
+                        font-size:20px;
+                        color:@iconColor;
+                    }
+                }
+                & when(@is-lastIcon =true) {
+                    &:after {
+                        display: inline-block;
+                        content: "\e639";
+                        position: absolute;
+                        right: 8px;
+                        .iconfont;
+                        .transition(.5s);
+                         font-size:18px;
+                         color:@iconColor;
+                    }
+                }
+                &:hover,
+                &:active {
+                    .checked;
+                    //.ui-accordion-li-link-active;
+                }
+                border-top:1px solid darken(@title-background, 10%);
+                border-radius:@border-radius;
+                background: @title-background;
+                width:100%;
+                text-decoration:none;
+                position:relative;
+                display: inline-block;
+                padding:0px 8px;
+                color:@color;
+            }
+            //选中的link内容
+            .ui-accordion-li-link-active {
+                & when(@isfirstIcon =true) {
+                    &:before {
+                        content: "\e66a";
+                    }
+                }
+                & when(@is-lastIcon =true) {
+                    &:after {
+                        .rotate(90deg);
+                        .transition(.5s);
+                    }
+                }
+                color:@hover-color;
+                border-bottom-right-radius:0px;
+                border-bottom-left-radius: 0px;
+                .checked;
+            }
+            //内容
+            .ui-accordion-li-content {
+                position: relative;
+                font-size: 14px;
+                display: none;
+                background: @cotent-background;
+                border-bottom-right-radius: @border-radius;
+                border-bottom-left-radius:@border-radius;
+                ul[class^="ui-accordion-ul"] {
+                    .ui-accordion-li {
+                        margin-top: 0px;
+                        .ui-accordion-li-link {
+                          background: transparent;
+                          border-top:1px solid lighten(@cotent-background, 10%);
+                        }
+                    }
+                }
+                img {
+                    max-width: 100%;
+                    margin: 0px auto;
+                }
+                p {
+                    padding: 0px 8px;
+                }
+            }
+            .active {
+                display: block;
+                .transition(1s);
+            }
+        }
+    }
+    .checked {
+        color:@hover-color;
+        background: @hover-background
+    }
+}

@@ -1,0 +1,136 @@
+/*
+    time:2016-07-11
+    autor:maweichao
+    desc:导航用到的属性值有， 
+    @border-radius: 0px;                   圆角
+    @background: #fff;                      背景色
+    @color: #80868A;                        字体颜色
+    @font-size: 16px;                       字体大小
+    @width: 100%;                           宽度
+    @height: auto;                          高度
+    @line-height: auto;                     垂直高度
+    @hover-bg-color: #0096ff;               按下背景颜色
+    @hover-text-color: #fff;                按下字体颜色
+    @hover-border-direction: none;           bottom|top|none 解释：按下导航底部或者头部的横线
+    @border:none;                            bottom|top|none 解释：头部或者底部边线
+    @is-shadow: true;                        true|false 解释：s是否阴影
+    @border-color: #0096ff;                  边框颜色
+    @is-columnRule: false;                  是否有中划线
+    @is-auto:false                          自动平分容器空白处(一旦为true就不能将他设置为滚动状态了)
+ */
+
+
+.ui-navDefault {
+    .TabBar( @tabbar-border-radius, 
+        @tabbar-background,
+        @tabbar-color, 
+        @tabbar-font-size, 
+        @tabbar-width,
+        @tabbar-height, 
+        @tabbar-line-height,
+        @tabbar-hover-bg-color, 
+        @tabbar-hover-text-color,
+         none, 
+         @tabbar-borderLocation, 
+         @tabbar-is-shadow, 
+         @tabbar-border-color, 
+         @tabbar-is-columnRule, 
+         @is-auto);
+}
+
+
+.ui-navRedTopLine {
+    .TabBar( @border-radius: 15px;
+    @background: #fff;
+    @color: #80868A;
+    @font-size: 16px;
+    @width: 100%;
+    @height: auto;
+    @line-height:28px;
+    @hover-bg-color: #fff;
+    @hover-text-color: #0195FF;
+    @hover-border-direction: top;
+    @border: top;
+    @is-shadow: true;
+    @border-color: #ea3d44;
+    @is-columnRule: true;
+    true;
+    );
+}
+    
+.ui-navNoLine {
+    .TabBar( @border-radius: 0px;
+    @background: #fff;
+    @color: #80868A;
+    @font-size: 16px;
+    @width: 100%;
+    @height: auto;
+    @line-height: auto;
+    @hover-bg-color: #0096ff;
+    @hover-text-color: #fff;
+    @hover-border-direction: none;
+    @border: none;
+    @is-shadow: true;
+    @border-color: #0096ff;
+    @is-columnRule: false;
+    @is-auto;
+    );
+}
+
+.ui-navTBLineIcon {
+    .TabBar( @border-radius: 15px;
+    @background: #fff;
+    @color: #80868A;
+    @font-size: 16px;
+    @width: 100%;
+    @height: auto;
+    @line-height: auto;
+    @hover-bg-color: #fff;
+    @hover-text-color: #0195FF;
+    @hover-border-direction: bottom;
+    @border: bottom;
+    @is-shadow: true;
+    @border-color: #ea3d44;
+    @is-columnRule: false;
+    true;
+    );
+}
+
+.ui-nav5 {
+    .TabBar( @border-radius: 15px;
+    @background: #fff;
+    @color: #80868A;
+    @font-size: 16px;
+    @width: 100%;
+    @height: auto;
+    @line-height: auto;
+    @hover-bg-color: #0195FF;
+    @hover-text-color: #fff;
+    @hover-border-direction: bottom;
+    @border: bottom;
+    @is-shadow: true;
+    @border-color: #ea3d44;
+    @is-columnRule: false;
+    @is-auto;
+    );
+}
+
+.ui-navTBIcon {
+    .TabBar( @border-radius: 15px;
+    @background: #fff;
+    @color: #80868A;
+    @font-size: 16px;
+    @width: 100%;
+    @height: auto;
+    @line-height: auto;
+    @hover-bg-color: #fff;
+    @hover-text-color: #0195FF;
+    @hover-border-direction: none;
+    @border: none;
+    @is-shadow: true;
+    @border-color: #ea3d44;
+    @is-columnRule: false;
+    true;
+    );
+}
+

@@ -1,0 +1,359 @@
+/* PathMenu 左、右下角的弹出菜单
+ * @param   @type                   位置[center,left,right]
+ * @param   @menu-number            菜单个数[3,4,5,6]
+ * @param   @opacity                透明度
+ * @param   @menu-radius-num        菜单展开半径
+ * @param   @left-or-right          距离右侧距离[center将失效] 
+ * @param   @bottom                 拒下方距离 
+ * @param   @btn-width-and-height   点击按钮宽和高                                                 2rem 
+ * @param   @btn-color              点击按钮颜色                                          
+ * @param   @menu-width-and-height  菜单宽和高                                                                  1.6rem
+ * @param   @menu-bg-color          菜单背景颜色                                                            1.6rem
+ * @param   @menu-color             菜单颜色                                                                     1.6rem 
+ * @param   @menu-font-size         点击按钮字体大小    
+ */
+.PathMenu(@type;@menu-number;@opacity;@menu-radius-num;@left-or-right;@bottom;@btn-width-and-height;@btn-color;@menu-width-and-height;@menu-bg-color;@menu-color;@menu-font-size){
+    &.active{
+        position:fixed;
+        top: 0;
+        bottom:0;
+        left: 0;
+        right: 0; 
+        z-index:98; 
+        background-color: rgba(0,0,0,@opacity);
+    }
+    & ul{
+        position:fixed;
+        bottom:@bottom;
+        height:@btn-width-and-height;
+        width:@btn-width-and-height;    
+        z-index:99;
+    }
+    & input[type=checkbox]+ul>li{
+        position:absolute;
+        left:0;
+        top:0;
+        height:@menu-width-and-height;
+        width:@menu-width-and-height;
+        background-color:@menu-bg-color ;
+        .border-radius(50%);
+        display: -webkit-box !important;
+        display: box !important;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        box-align: center;  
+        -webkit-box-pack: center;
+        box-pack: center;
+    }
+    & input[type=checkbox]+ul>li i{
+        line-height: @menu-font-size;
+        color: @menu-color;
+        
+        font-size: @menu-font-size;
+    }
+     & input[type=checkbox]+ul>div[data-toggle=pathmenuBtn]{
+        position:absolute;
+        left:0;
+        top:0;
+//      height:@btn-width-and-height;
+//      width:@btn-width-and-height;
+        .border-radius(50%);
+        line-height: @btn-width-and-height;
+        z-index: ;
+    }
+    & input[type=checkbox]+ul>div[data-toggle=pathmenuBtn] i{
+        line-height: @btn-width-and-height;
+        color: @btn-color;
+        .border-radius(50%);
+        font-size: @btn-width-and-height;
+    }
+    & input[type=checkbox]+ul>div[data-toggle=pathmenuBtn]{
+        -webkit-transform:rotate(0deg);
+        .animation(btn_inactive 0.3s 1 ease-in-out);
+    }
+    & input[type=checkbox]:checked+ul>div[data-toggle=pathmenuBtn]{
+        -webkit-transform:rotate(405deg);
+        .animation(btn_active 0.3s 1 ease-in-out);
+    }
+    & when(@type=center){
+        @menu-radius : @menu-radius-num;
+        & ul{
+            left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+        }
+        
+        & when(@menu-number=3){
+            @menu-x: @menu-radius*0.55;
+            @menu-y: @menu-radius*0.6;
+            .MenuAnimation(1;-@menu-x;-@menu-y;pathMenu_inactiveFirst;pathMenu_activeFirst);
+            .KeyframesFirst(-@menu-x;-@menu-y);
+            .MenuAnimation(2;0rem;-@menu-radius;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(0rem;-@menu-radius);
+            .MenuAnimation(3;@menu-x;-@menu-y;pathMenu_inactiveLast;pathMenu_activeLast);
+            .KeyframesLast(@menu-x;-@menu-y);
+        }
+        & when(@menu-number=4){
+            @menu-x: @menu-radius*0.9;
+            @menu-y: @menu-radius*0.4;
+            @menu-x2: @menu-radius*0.4;
+            @menu-y2: @menu-radius*0.9;
+            .MenuAnimation(1;-@menu-x;-@menu-y;pathMenu_inactiveFirst;pathMenu_activeFirst);
+            .KeyframesFirst(-@menu-x;-@menu-y);
+            .MenuAnimation(2;-@menu-x2;-@menu-y2;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(-@menu-x2;-@menu-y2);
+            .MenuAnimation(3;@menu-x2;-@menu-y2;pathMenu_inactive3;pathMenu_active3);
+            .Keyframes3(@menu-x2;-@menu-y2);
+            .MenuAnimation(4;@menu-x;-@menu-y;pathMenu_inactiveLast;pathMenu_activeLast);
+            .KeyframesLast(@menu-x;-@menu-y);
+        }
+        & when(@menu-number=5){
+            @menu-x: @menu-radius*0.71;
+            @menu-y: @menu-radius*0.71;
+            .MenuAnimation(1;-@menu-radius;0rem;pathMenu_inactiveFirst;pathMenu_activeFirst);
+            .KeyframesFirst(-@menu-radius;0rem);
+            .MenuAnimation(2;-@menu-x;-@menu-x;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(-@menu-x;-@menu-x);
+            .MenuAnimation(3;0rem;-@menu-radius;pathMenu_inactive3;pathMenu_active3);
+            .Keyframes3(0rem;-@menu-radius);
+            .MenuAnimation(4;@menu-x;-@menu-x;pathMenu_inactive4;pathMenu_active4);
+            .Keyframes4(@menu-x;-@menu-x);
+            .MenuAnimation(5;@menu-radius;0rem;pathMenu_inactiveLast;pathMenu_activeLast);
+            .KeyframesLast(@menu-radius;0rem);
+        }
+        & when(@menu-number=6){
+            @menu-x: @menu-radius*0.95;
+            @menu-y: @menu-radius*0.15;
+            @menu-x2: @menu-radius*0.7;
+            @menu-y2: @menu-radius*0.6;
+            @menu-x3: @menu-radius*0.28;
+            @menu-y3: @menu-radius*0.92;
+            .MenuAnimation(1;-@menu-x;-@menu-y;pathMenu_inactiveFirst;pathMenu_activeFirst);
+            .KeyframesFirst(-@menu-x;-@menu-y);
+            .MenuAnimation(2;-@menu-x2;-@menu-y2;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(-@menu-x2;-@menu-y2);
+            .MenuAnimation(3;-@menu-x3;-@menu-y3;pathMenu_inactive3;pathMenu_active3);
+            .Keyframes3(-@menu-x3;-@menu-y3);
+            .MenuAnimation(4;@menu-x3;-@menu-y3;pathMenu_inactive4;pathMenu_active4);
+            .Keyframes4(@menu-x3;-@menu-y3);
+            .MenuAnimation(5;@menu-x2;-@menu-y2;pathMenu_inactive5;pathMenu_active5);
+            .Keyframes5(@menu-x2;-@menu-y2);
+            .MenuAnimation(6;@menu-x;-@menu-y;pathMenu_inactiveLast;pathMenu_activeLast);
+            .KeyframesLast(@menu-x;-@menu-y);
+        }
+    }
+    & when(@type=left){
+        @menu-radius : -@menu-radius-num;
+        .MenuAnimation(1;0rem;@menu-radius;pathMenu_inactiveFirst;pathMenu_activeFirst);
+        & ul{
+            left:@left-or-right;
+        }
+        .KeyframesLast(-@menu-radius;0rem);
+        .KeyframesFirst(0rem;@menu-radius);
+        & when(@menu-number=3){
+            @menu-x: @menu-radius*0.71;
+            @menu-y: @menu-radius*0.71;
+            .MenuAnimation(2;-@menu-x;@menu-y;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(-@menu-x;@menu-y);
+            .MenuAnimation(3;-@menu-radius;0rem;pathMenu_inactiveLast;pathMenu_activeLast);  
+        }
+        & when(@menu-number=4){
+            @menu-x: @menu-radius*0.5;
+            @menu-y: @menu-radius*0.85;
+            .MenuAnimation(2;-@menu-x;@menu-y;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(-@menu-x;@menu-y);
+            .MenuAnimation(3;-@menu-y;@menu-x;pathMenu_inactive3;pathMenu_active3);
+            .Keyframes3(-@menu-y;@menu-x);
+            .MenuAnimation(4;-@menu-radius;0rem;pathMenu_inactiveLast;pathMenu_activeLast);  
+        }    
+        & when(@menu-number=5){
+            @menu-x: @menu-radius*0.38;
+            @menu-y: @menu-radius*0.93;
+            @menu-x2: @menu-radius*0.73;
+            @menu-y2: @menu-radius*0.73;
+            .MenuAnimation(2;-@menu-x;@menu-y;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(-@menu-x;@menu-y);
+            .MenuAnimation(3;-@menu-x2;@menu-y2;pathMenu_inactive3;pathMenu_active3);
+            .Keyframes3(-@menu-x2;@menu-y2);
+            .MenuAnimation(4;-@menu-y;@menu-x;pathMenu_inactive4;pathMenu_active4);
+            .Keyframes4(-@menu-y;@menu-x);
+            .MenuAnimation(5;-@menu-radius;0rem;pathMenu_inactiveLast;pathMenu_activeLast);            
+        }
+        
+        & when(@menu-number=6){
+            @menu-x: @menu-radius*0.31;
+            @menu-y: @menu-radius*0.95;
+            @menu-x2: @menu-radius*0.6;
+            @menu-y2: @menu-radius*0.83;
+            .MenuAnimation(2;-@menu-x;@menu-y;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(-@menu-x;@menu-y);
+            .MenuAnimation(3;-@menu-x2;@menu-y2;pathMenu_inactive3;pathMenu_active3);
+            .Keyframes3(-@menu-x2;@menu-y2);
+            .MenuAnimation(4;-@menu-y2;@menu-x2;pathMenu_inactive4;pathMenu_active4);
+            .Keyframes4(-@menu-y2;@menu-x2);
+            .MenuAnimation(5;-@menu-y;@menu-x;pathMenu_inactive5;pathMenu_active5);
+            .Keyframes5(-@menu-y;@menu-x);
+            .MenuAnimation(6;-@menu-radius;0rem;pathMenu_inactiveLast;pathMenu_activeLast);
+        }
+    }
+    
+    & when(@type=right){
+         @menu-radius : -@menu-radius-num;
+        .MenuAnimation(1;0rem;@menu-radius;pathMenu_inactiveFirst;pathMenu_activeFirst);       
+         & ul{
+            right:@left-or-right;  
+        } 
+        .KeyframesLast(@menu-radius;0rem);
+        .KeyframesFirst(0rem;@menu-radius);
+        & when(@menu-number=3){
+            @menu-x: @menu-radius*0.71;
+            @menu-y: @menu-radius*0.71;
+            .MenuAnimation(2;@menu-x;@menu-y;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(@menu-x;@menu-y);
+            .MenuAnimation(3;@menu-radius;0rem;pathMenu_inactiveLast;pathMenu_activeLast); 
+        }
+        & when(@menu-number=4){
+            @menu-x: @menu-radius*0.5;
+            @menu-y: @menu-radius*0.85;
+            .MenuAnimation(2;@menu-x;@menu-y;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(@menu-x;@menu-y);
+            .MenuAnimation(3;@menu-y;@menu-x;pathMenu_inactive3;pathMenu_active3);
+            .Keyframes3(@menu-y;@menu-x);
+            .MenuAnimation(4;@menu-radius;0rem;pathMenu_inactiveLast;pathMenu_activeLast);
+        }    
+        & when(@menu-number=5){
+            @menu-x: @menu-radius*0.38;
+            @menu-y: @menu-radius*0.93;
+            @menu-x2: @menu-radius*0.73;
+            @menu-y2: @menu-radius*0.73;
+            .MenuAnimation(2;@menu-x;@menu-y;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(@menu-x;@menu-y);
+            .MenuAnimation(3;@menu-x2;@menu-y2;pathMenu_inactive3;pathMenu_active3);
+            .Keyframes3(@menu-x2;@menu-y2);
+            .MenuAnimation(4;@menu-y;@menu-x;pathMenu_inactive4;pathMenu_active4);
+            .Keyframes4(@menu-y;@menu-x);
+            .MenuAnimation(5;@menu-radius;0rem;pathMenu_inactiveLast;pathMenu_activeLast);            
+        }
+        
+        & when(@menu-number=6){
+            @menu-x: @menu-radius*0.31;
+            @menu-y: @menu-radius*0.95;
+            @menu-x2: @menu-radius*0.6;
+            @menu-y2: @menu-radius*0.83;
+            .MenuAnimation(2;@menu-x;@menu-y;pathMenu_inactive2;pathMenu_active2);
+            .Keyframes2(@menu-x;@menu-y);
+            .MenuAnimation(3;@menu-x2;@menu-y2;pathMenu_inactive3;pathMenu_active3);
+            .Keyframes3(@menu-x2;@menu-y2);
+            .MenuAnimation(4;@menu-y2;@menu-x2;pathMenu_inactive4;pathMenu_active4);
+            .Keyframes4(@menu-y2;@menu-x2);
+            .MenuAnimation(5;@menu-y;@menu-x;pathMenu_inactive5;pathMenu_active5);
+            .Keyframes5(@menu-y;@menu-x);
+            .MenuAnimation(6;@menu-radius;0rem;pathMenu_inactiveLast;pathMenu_activeLast);
+        }    
+    }
+}
+
+/* MenuAnimation 菜单动画
+ * @param   @name               子菜单排序
+ * @param   @menu-x             菜单x坐标
+ * @param   @menu-y             菜单Y坐标
+ * @param   @btn_inactive       菜单关闭动画名
+ * @param   @btn_active         菜单弹出动画名
+ */
+.MenuAnimation(@name;@menu-x;@menu-y;@btn_inactive;@btn_active){
+    & input[type=checkbox]+ul>li.pathmenu@{name}{
+        -webkit-transform:translate(0rem,0rem) rotate(0deg) scale(0.1,0.1);
+        .Opacity(0);
+        .animation(@btn_inactive 0.3s 1 ease-in-out);
+    }
+    & input[type=checkbox]:checked+ul>li.pathmenu@{name}{
+        -webkit-transform:translate(@menu-x,@menu-y) rotate(2880deg) scale(1,1);
+        .Opacity(1);
+        .animation(@btn_active 0.3s 1 ease-in-out);
+    }
+}
+
+
+.KeyframesFirst(@menu-x;@menu-y){
+    @-webkit-keyframes pathMenu_activeFirst{
+        .KeyframesActive(@menu-x;@menu-y);
+    }
+    @-webkit-keyframes pathMenu_inactiveFirst{
+        .KeyframesInactive(@menu-x;@menu-y);
+    }
+}
+.Keyframes2(@menu-x;@menu-y){
+    @-webkit-keyframes pathMenu_active2{
+        .KeyframesActive(@menu-x;@menu-y);
+    }
+    @-webkit-keyframes pathMenu_inactive2{
+        .KeyframesInactive(@menu-x;@menu-y);
+    }
+}
+.Keyframes3(@menu-x;@menu-y){
+    @-webkit-keyframes pathMenu_active3{
+        .KeyframesActive(@menu-x;@menu-y);
+    }
+    @-webkit-keyframes pathMenu_inactive3{
+        .KeyframesInactive(@menu-x;@menu-y);
+    }
+}
+.Keyframes4(@menu-x;@menu-y){
+    @-webkit-keyframes pathMenu_active4{
+        .KeyframesActive(@menu-x;@menu-y);
+    }
+    @-webkit-keyframes pathMenu_inactive4{
+        .KeyframesInactive(@menu-x;@menu-y);
+    }
+}
+.Keyframes5(@menu-x;@menu-y){
+    @-webkit-keyframes pathMenu_active5{
+        .KeyframesActive(@menu-x;@menu-y);
+    }
+    @-webkit-keyframes pathMenu_inactive5{
+        .KeyframesInactive(@menu-x;@menu-y);
+    }
+}
+.KeyframesLast(@menu-x;@menu-y){
+    @-webkit-keyframes pathMenu_activeLast{
+        .KeyframesActive(@menu-x;@menu-y);
+    }
+    @-webkit-keyframes pathMenu_inactiveLast{
+        .KeyframesInactive(@menu-x;@menu-y);
+    }
+}
+.KeyframesActive(@translate-x;@translate-y){
+    0% {
+        -webkit-transform:translate(0rem,0rem) rotate(0deg) scale(0.1,0.1);
+    }
+    100% { 
+        -webkit-transform:translate(@translate-x,@translate-y) rotate(2880deg) scale(1,1);  
+    }
+}
+.KeyframesInactive(@translate-x;@translate-y){
+    0% {
+        -webkit-transform:translate(@translate-x,@translate-y) rotate(2880deg) scale(1,1);
+        .Opacity(1)
+    }
+    100% { 
+        -webkit-transform:translate(0rem,0rem) rotate(0deg) scale(0.1,0.1);
+        .Opacity(0)
+    }
+}
+@-webkit-keyframes btn_active{
+    0% {
+        -webkit-transform:rotate(0deg);
+    }
+    100% { 
+        -webkit-transform:rotate(405deg);
+    }
+}
+@-webkit-keyframes btn_inactive{
+    0% {
+        -webkit-transform:rotate(405deg);
+    }
+    100% { 
+        -webkit-transform:rotate(0deg);
+    }
+}

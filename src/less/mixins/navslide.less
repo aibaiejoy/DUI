@@ -1,0 +1,76 @@
+.navSlide ( 
+    @width, 
+    @height, 
+    @cont-background, 
+    @operation-background, 
+    @font-size, 
+    @color, 
+    @ispoint, 
+    @is-hr
+    ) {
+    width:@width;
+    >li {
+        overflow: hidden;
+        position: relative;
+        margin: 0px auto;
+        width: @width;
+        height: @height;
+        & when (@is-hr =true) {
+            border-bottom: 1px solid #c4c4c4;
+        }
+        .cont {
+            width: @width;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+            //border:1px solid red;
+            //box-shadow: 0px 0px 2px 2px @cont-background;
+            background: @cont-background;
+        }
+        .operation {
+            position: absolute;
+            top:0px;
+            z-index: 1;
+            height: 100%;
+            display: -webkit-flex;
+            /* Safari */
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            align-items: center;
+            & when (@ispoint =right) {
+                right: 0px;
+            }
+            & when (@ispoint =left) {
+                left: 0px;
+            }
+            >span {
+                padding: 0px 15px;
+                height: 100%;
+                display: box;
+                display: box;
+                display: -webkit-box;
+                display: -moz-box;
+                -webkit-box-pack: center;
+                -moz-box-pack: center;
+                -webkit-box-align: center;
+                color: @color;
+                // flex:1;
+                &:nth-child(2n+1) {
+                    background: @operation-background;
+                    &:active {
+                        background: darken(@operation-background, 20%);
+                    }
+                }
+                &:nth-child(2n) {
+                    background: spin(@operation-background, 220);
+                    &:active {
+                        background: darken(spin(@operation-background, 220), 20%);
+                    }
+                }
+            }
+        }
+    }
+}

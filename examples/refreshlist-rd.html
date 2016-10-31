@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Hello UI Refresh</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../dist/css/d6.css"></head>
+	<style type="text/css">
+		.ui-list-block{
+			margin:0;
+		}
+		/*.J_list{
+			top:50px;
+		}*/
+
+		[type="template"]{
+			visibility: hidden;
+		}
+</style>
+<body>
+	
+	<div id="J_list" class="ui-refresh">
+		<div class="ui-listview-twoline" type="template">
+			<div class="ui-listview-img">
+				<img src="img/listView04.jpg"/>
+			</div>
+			<div class="ui-listview-content">
+				<div class="ui-content-title">
+					<div ng-model="content:name">标题</div>
+					<span>08:20</span>
+				</div>
+				<div class="ui-content-body">
+					此处是文本内容
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="../assets/libs/zepto.js"></script>
+	<script src="../assets/libs/dt.js"></script>
+	<script src="../dist/js/d6.js"></script>
+	<script>
+	window.onLoad = function refreshlist(){
+		var config = {
+			uiType : 'listview',
+			method : 'search',
+			server : {
+				url : 'http://192.168.180.11:8080/test/cloud/user/getreslist',
+				type : 'post',
+				eventName : 'onclick',
+				entityName : 'user'
+			},
+			orderRule : {
+				property : 'id',
+				order : 'DESC'
+			},
+			limitRule : {
+				limit : '10'
+			},
+			tempName : 'temp1',
+			maps : [{
+				entity : 'name',
+				dom : 'names'
+			}, {
+				entity : 'notes',
+				dom : 'notes'
+			}]
+		};
+
+	    $("#J_list").generate({
+			config : config
+		})
+
+		/*
+			文档地址：http://docs.369cloud.com/engine/kuozhan/window#addHeaderRefreshing
+			addHeaderRefreshing : 添加当前窗口或者popover下拉刷新事件
+			addFooterRefreshing : 添加当前窗口或者popover上拉刷新事件
+			endHeaderRefresh : 结束当前窗口或者popover下拉刷新事件
+			endFooterRefresh : 结束当前窗口或者popover上拉刷新事件
+			removeHeaderRefreshing : 移除当前窗口或者popover下拉刷新事件
+			removeFooterRefreshing : 移除当前窗口或者popover上拉刷新事件
+		*/
+
+		if(window.rd){
+			//添加下拉刷新
+			var imagePath = "res://箭头.jpg";
+			var settings = {statusLabel:{hidden:false,font:14,color:'#00FF00',pullText:"下拉有惊喜",releaseText:"放手",refreshingText:"努力加载中。。。"},timeLabel:{hidden:false,font:12,color:'#0000FF'},image:imagePath};
+			rd.window.addHeaderRefreshing(function(){
+				//调用generate的prev方法，更新前一屏数据
+				$("#J_list").generate("refresh", function(nomore){
+					if(nomore){rd.window.endHeaderRefresh()}
+				})
+			},settings);
+			//添加上拉加载，
+			rd.window.addFooterRefreshing(function(){
+				//调用generate，next方法，更新后一屏数据
+				$("#J_list").generate("next", function(nomore){
+					if(nomore){rd.window.endFooterRefresh()}
+				})
+			},{});
+		}
+	}
+	
+	</script>
+</body>
+</html>

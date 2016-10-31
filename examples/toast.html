@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+    
+    <title>buttons</title>
+    <style type="text/css">
+    body {
+        font-family: "微软雅黑" !important;
+        background-color: #eeeeee;
+    }
+    
+    .padd-default {
+        padding: 0.5em;
+    }
+    
+    .padd-lr-default {
+        padding: 0 .5em;
+    }
+    
+    .mar-t-lg {
+        margin-top: 1em;
+    }
+    
+    .mar-lr-lg {
+        margin: 0 1em;
+    }
+    
+    .mar-t-default {
+        margin-top: .5em;
+    }
+    
+    .box {
+        display: -webkit-box !important;
+        display: box !important;
+        display: -webkit-flex;
+        display: flex;
+        position: relative;
+    }
+    /*垂直方向排列方式*/
+    
+    .box-align-start {
+        -webkit-box-align: start;
+        box-align: start;
+    }
+    
+    .box-align-center {
+        -webkit-box-align: center;
+        box-align: center;
+    }
+    
+    .box-align-end {
+        -webkit-box-align: end;
+        box-align: end;
+    }
+    /*水平方向排列方式*/
+    
+    .box-pack-start {
+        -webkit-box-pack: start;
+        box-pack: start;
+    }
+    
+    .box-pack-center {
+        -webkit-box-pack: center;
+        box-pack: center;
+    }
+    
+    .box-pack-end {
+        -webkit-box-pack: end;
+        box-pack: end;
+    }
+    /*平均分配*/
+    
+    .box-pack-justify {
+        -webkit-box-pack: justify;
+        box-pack: justify;
+    }
+    /*垂直排列*/
+    
+    .box-orient-vertical {
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+    }
+    /*反向排列*/
+    
+    .box-direction-reverse {
+        -webkit-box-direction: reverse;
+        box-direction: reverse;
+    }
+    /*盒子伸缩比例*/
+    
+    .box-flex-1 {
+        position: relative;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="ui-top-bar-holder">
+    <header class="ui-topbar">
+        <a class="ui-top-bar-callback">
+    	 		<i class="iconfont icon-angleleft"></i> 
+            </a>
+        <h1 class="ui-top-bar-title">toast</h1>
+        <a class="ui-top-bar-link"></a>
+    </header>
+</div>
+    <div style="padding: 1em;margin-top: 3rem;">
+	    <div onclick="toast()">
+	    	打开toast
+	    </div>
+    </div>
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+    <script>
+    	/* $.showToast   toast弹出框
+    	 * css:"toast-group"       默然样式
+    	 * duration: 2000                  动画时间，默认2s
+    	 * meg:"hello world"       提示内容
+    	 * top:'80%'               提示信息位置，默认据上方80%水平居中
+    	 */
+    	function toast(){
+    		$.showToast({
+				css:"ui-toast",
+    			duration:200000,
+				meg:"文本内容文本内容文本内容文本内容文本内容文本内容",
+    			top:"80%"
+    		});
+    	}
+    </script>
+</body>
+
+</html>

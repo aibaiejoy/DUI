@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,initial-scale=1.0">
+    <title>navSlide</title>
+    <link rel="stylesheet" href="../dist/css/d6.css" />
+</head>
+
+<body>
+    <div class="ui-top-bar-holder">
+        <header class="ui-topbar">
+            <a class="ui-top-bar-callback">
+                返回
+            </a>
+            <h1 class="ui-top-bar-title">navslide</h1>
+            <a class="ui-top-bar-link">连接</a>
+        </header>
+    </div>
+    <h1>向左边滑动噢噢</h1>
+    <ul class="navslide-list">
+        <li>
+            <div class="cont">
+                向左边滑动
+            </div>
+            <div class="operation">
+                <span>删除</span>
+                <span>置顶</span>
+                <span>标记已读</span>
+            </div>
+        </li>
+        <li>
+            <div class="cont">
+                <div class="ui-onelinelists">
+                    <div class="onelinelists-img">
+                        <img src="img/listView02.png" />
+                    </div>
+                    <div class="onelinelists-content">
+                        标题
+                    </div>
+                    <div class="onelinelists-right">
+                        <i class="iconfont icon-angleright"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="operation">
+                <span>删除</span>
+                <span>置顶</span>
+                <span>标记已读</span>
+            </div>
+        </li>
+        <li>
+            <div class="cont">
+                <div class="ui-onelinelists">
+                    <div class="onelinelists-img">
+                        <img src="img/listView03.png" />
+                    </div>
+                    <div class="onelinelists-content">
+                        标题
+                    </div>
+                    <div class="onelinelists-right">
+                        <i class="iconfont icon-angleright"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="operation">
+                <span>删除</span>
+                <span>置顶</span>
+                <span>标记已读</span>
+            </div>
+        </li>
+    </ul>
+    <h1>向右边滑动噢噢</h1>
+    <ul class="navslide-test">
+        <li>
+            <div class="cont">
+                <div class="ui-onelinelists">
+                    <div class="onelinelists-img">
+                        <img src="img/listView03.png" />
+                    </div>
+                    <div class="onelinelists-content">
+                        标题
+                    </div>
+                    <div class="onelinelists-right">
+                        <i class="iconfont icon-angleright"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="operation">
+                <span>删除</span>
+                <span>置顶</span>
+                <span>标记已读</span>
+            </div>
+        </li>
+        <li>
+            <div class="cont">
+                <div class="ui-onelinelists">
+                    <div class="onelinelists-img">
+                        <img src="img/listView03.png" />
+                    </div>
+                    <div class="onelinelists-content">
+                        标题
+                    </div>
+                    <div class="onelinelists-right">
+                        <i class="iconfont icon-angleright"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="operation">
+                <span>删除</span>
+                <span>置顶</span>
+                <span>标记已读</span>
+            </div>
+        </li>
+        <li>
+            <div class="cont">
+                向右边滑动试试
+            </div>
+            <div class="operation">
+                <span>删除</span>
+                <span>置顶</span>
+                <span>标记已读</span>
+            </div>
+        </li>
+    </ul>
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+    <script src="../assets/libs/dt.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    function uploads() {
+        $.upload("idfile", function() {
+            console.log("成功");
+        }, function() {
+            console.log("失败");
+        });
+    }
+
+    $(".navslide-list").navslide({
+        direction: "left" //滑动方向，
+    }).on("open", function(e, ele) {
+        //打开事件监听
+        console.log($(ele).html());
+
+    }).on("close", function(ele) {
+        //打开事件监听
+        console.log($(ele).html());
+    })
+
+    $(".navslide-test").navslide({
+        direction: "right"
+    });
+    </script>
+</body>
+
+</html>

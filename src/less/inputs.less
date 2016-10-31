@@ -1,0 +1,205 @@
+//复选框--[LY]----
+/* ui-checkbox  复选框 [LY]
+ * @param   @no-check-bg        没选中背景图片["\e661","\e662","\e663","\e666"]       "\e662"
+ * @param   @no-check-bg-color  没选中背景图片颜色                                                                                                                  #8b8b8b
+ * @param   @checked-bg         选中背景图片["\e661","\e662","\e663","\e666"]        "\e662"
+ * @param   @checked-bg-color   选中背景图片颜色                                                                                                                    #0096ff
+ * @param   @checkbox-size      图标大小                                                                                                                                    1.2rem
+ */
+.ui-checkbox{
+    .Checkbox(
+        @checkbox-default-bg;
+        #8b8b8b;
+        @checkbox-default-bg-checked;
+        #0096ff;
+        1.2em
+    );
+}
+
+/* ui-checkboxGroup  复选框组合 [LY]
+ * @param   @no-check-bg        没选中背景图片["\e661","\e662","\e663","\e666"]       "\e662"
+ * @param   @no-check-bg-color  没选中背景图片颜色                                                                                                                  #8b8b8b
+ * @param   @checked-bg         选中背景图片["\e661","\e662","\e663","\e666"]        "\e662"
+ * @param   @checked-bg-color   选中背景图片颜色                                 #0096ff
+ * @param   @checkbox-size      图标大小                                              1.2rem;
+ * @param   @label-color        文字颜色                                              #8b8b8b;
+ * @param   @label-size         文字大小                                              1em;
+ * @param   @btn-position       按钮位置【left;right】                     left;
+ * @param   @is-fill            按钮文字是否居两边【true;false】    false
+ * @param   @is-label           文字是否存在【true;false】              true
+ */
+.ui-checkboxGroup{
+    .CheckboxGroup(
+        @checkbox-default-bg;
+        #8b8b8b;
+        @checkbox-default-bg-checked;
+        #0096ff;
+        1.2em;
+        #8b8b8b;
+        1em;
+        left;
+        false;
+        true
+    );
+}
+
+/* ui-radio  单选框 [LY]
+ * @param   @no-check-bg        没选中背景图片 ["\e664","\e667","\e666"]      "\e664"
+ * @param   @no-check-bg-color  没选中背景图片颜色                   #8b8b8b
+ * @param   @checked-bg         选中背景图片["\e665","\e666","\e668"]        "\e665"
+ * @param   @checked-bg-color   选中背景图片颜色                         #0096ff
+ * @param   @checkbox-size      图标大小                                     1.2rem
+ */
+.ui-radio{
+    .Checkbox(
+        @radio-default-bg;
+        #8b8b8b;
+        @radio-default-bg-checked;
+        #0096ff;
+        1.2em
+    );
+}
+
+/* ui-radioGroup  单选框组合 [LY]
+ * @param   @no-check-bg        没选中背景图片 ["\e664","\e667","\e666"]      "\e664"
+ * @param   @no-check-bg-color  没选中背景图片颜色                   #8b8b8b
+ * @param   @checked-bg         选中背景图片["\e665","\e666","\e668"]        "\e665"
+ * @param   @checked-bg-color   选中背景图片颜色                                #0096ff
+ * @param   @checkbox-size      图标大小                                              1.2rem;
+ * @param   @label-color        文字颜色                                              #8b8b8b;
+ * @param   @label-size         文字大小                                              1em;
+ * @param   @btn-position       按钮位置【left;right】                     left;
+ * @param   @is-fill            按钮文字是否居两边【true;false】    false
+ * @param   @is-label           文字是否存在【true;false】              true
+ */
+.ui-radioGroup{
+    .CheckboxGroup(
+        @radio-default-bg;
+        #8b8b8b;
+        @radio-default-bg-checked;
+        #0096ff;
+        1.2em;
+        #8b8b8b;
+        1em;
+        left;
+        false;
+        true
+    );
+}
+
+/* ui-input  输入框 [LY]
+ * @param  @padding-vertical        上下边距                                   0.5em;
+ * @param  @padding-horizontal      左右边距                                    1em;
+ * @param  @background              背景颜色                                    #ffffff;
+ * @param  @border-color            边框颜色                                    #bababa;
+ * @param  @width                   宽度[px、em、%]             100%;
+ * @param  @border-radius           圆角弧度                                    0.3rem;
+ * @param  @text-align              文字位置[left;center;right] center
+ * @param  @line-height             行间距                                        1.5rem;
+ * @param  @font-size               字体大小                                    1em;
+ * @param  @color                   字体颜色                                   #8b8b8b;
+ */
+.ui-input{
+    .Input(
+        0.5em;
+        1em;
+        #ffffff;
+        #bababa;
+        100%;
+        0.3em;
+        center;
+        1.5em;
+        1em;
+        #8b8b8b
+    );
+    
+}
+/* ui-inputSearch  输入框 [LY]
+ * @param  @margin                  外边距                                         0
+ * @param  @padding-vertical        上下边距                                    0.5rem;
+ * @param  @padding-horizontal      左右边距                                    1rem;
+ * @param  @background              背景颜色                                    #ffffff;
+ * @param  @border-color            边框颜色                                    #bababa;
+ * @param  @width                   宽度[px、em、%]             100%;
+ * @param  @border-radius           圆角弧度                                    0.3rem;
+ * @param  @text-align              文字位置[left;center;right] center
+ * @param  @line-height             行间距                                        1.5rem;
+ * @param  @font-size               字体大小                                    1em;
+ * @param  @color                   字体颜色                                   #8b8b8b;
+ */
+.ui-inputSearch{
+    .InputSearch(
+        0;
+        0.5em;
+        1em;      
+        #ffffff;
+        #bababa;    
+        100%;
+        0.3em;
+        left;
+        1.5em;
+        1em;
+        #8b8b8b
+    );
+}
+
+/* ui-inputGroup  输入框组合 [LY]
+ * @param  @margin                  外边距                                                          0;
+ * @param  @padding                 内边距                                                         0.5em 1em;
+ * @param  @background              背景颜色                                                    #ffffff;
+ * @param  @border-style            边框样式[none,all,bottom]   all;
+ * @param  @border-color            边框颜色                                                       #bababa;
+ * @param  @width                   宽度[px、em、%]             100%;
+ * @param  @border-radius           圆角弧度                                                     0.3em;
+ * @param  @margin-right            输入框和图标间距                                 0.3em;
+ * @param  @line-height             行间距                                                           1.5em;
+ * @param  @font-size               字体大小                                                      1em;
+ * @param  @color                   字体颜色                                                   #8b8b8b;
+ */
+.ui-inputGroup{
+    .InputGroup(
+        0;
+        0.5em 1em;
+        #ffffff;
+        all;
+        #bababa;
+        100%;
+        0.3em;
+        0.3em;
+        1.5em;
+        1em;
+        #8b8b8b
+    );
+}
+  
+ /*textarea-object    多行输入对象
+
+ 
+ * @param  @padding-vertical        上下边距                                    0.5rem;
+ * @param  @padding-horizontal      左右边距                                    1rem;
+ * @param  @background              背景颜色                                    #ffffff;
+ * @param  @border-color            边框颜色                                    #bababa;
+ * @param  @border-radius           圆角弧度                                    0.3rem;
+ * @param  @width                   宽度[px、em、%]             100%;
+ * @param  @height                  高[px、em、%]               8rem;
+ * @param  @text-indent             开头空格                                    1rem;
+ * @param  @line-height             行间距                                       1.5rem;
+ * @param  @font-size               字体大小                                    1rem;
+ * @param  @color                   字体颜色                                     #8b8b8b;
+
+ */
+.ui-textarea{
+    .Textarea(
+        0.5em;
+        1em;
+        #ffffff;
+        #bababa;
+        0.3em;
+        100%;
+        8em;
+        1em;
+        1.5em;
+        1em;
+        #8b8b8b
+    );
+}

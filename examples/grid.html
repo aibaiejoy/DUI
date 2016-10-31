@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,initial-scale=1.0">
+		<title>九宫格</title>
+		<link rel="stylesheet" href="../dist/css/d6.css"/>
+		<style>
+			body{
+				background-color: #fff;
+				font-size: 12px;
+			}
+			/* 页面中的css 都是为了测试效果，给grid必须*/
+			.demo{
+				background-image: linear-gradient(90deg, #F5F5F5 25%, #fdfdfd 25%, #fdfdfd 50%, #F5F5F5 50%, #F5F5F5 75%, #fdfdfd 75%, #fdfdfd );
+
+				margin-bottom: 20px;
+			    border-top: solid 1px #ddd;
+			    border-bottom: solid 1px #ddd;
+			}
+			.demo [class*=grid-cell], .demo [class*=col-] {
+			    background-color: rgba(72, 174, 255, 0.27);
+			    text-align: center;
+			}
+			h3{
+				line-height: 1.5em;
+				font-size: 14px;
+			}
+			.title, .footer{
+				height: 30px;
+				line-height: 30px;
+				background: #fdfdfd;
+				border-bottom: 1px solid #ddd;
+				text-align: center;
+				font-size: 16px;
+			}
+			.footer{
+				border-top: 1px solid #ddd;
+				border-bottom: none;
+			}
+			img{
+				width:100%;
+			}
+			.img-box{
+				border:1px solid #ccc;
+			}
+
+			.nine-grid-demo{
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container-flex">
+			<header class="ui-top-bar">
+		        <span class="ui-top-bar-callback"><a>返回</a></span>
+		        <h1 class="ui-top-bar-title">标题</h1>
+		        <span class="ui-top-bar-link"><a >连接</a></span>
+		    </header>
+			<div class="content">
+				<ul class="row demo">
+					<li class="col-xs-2">col-xs-2</li>
+					<li class="col-xs-2">col-xs-2</li>
+					<li class="col-xs-2">col-xs-2</li>
+					<li class="col-xs-2">col-xs-2</li>
+					<li class="col-xs-2">col-xs-2</li>
+					<li class="col-xs-2">col-xs-2</li>
+					<li class="col-xs-2">col-xs-2</li>
+					<li class="col-xs-2">col-xs-2</li>
+					<li class="col-xs-2">col-xs-2</li>
+				</ul>
+
+				<ul class="row demo">
+					<li class="col-xs-6">col-xs-6</li>
+					<li class="col-xs-6">col-xs-6</li>
+				</ul>
+
+			</div>
+			<div class="footer">自动撑到底部</div>
+		</div>
+		<div class="container-flex">
+			<header class="ui-nav-bar">
+		        <div class="ui-nav-bar-inner">
+		            <a class="ui-action-back ui-nav-bar-link">
+		                <i class="ui-nav-bar-icon ui-nav-bar-left ui-icon-left-nav"></i>
+		            </a>
+		            <h1 class="ui-nav-bar-title">自适应九宫格或者16宫格布局例子</h1>
+		            <a class="ui-nav-bar-link"></a>
+		        </div>
+		    </header>
+			<div class="content">
+				<ul class="row demo equal-grid">
+					<li class="col-xs-4">地址</li>
+					<li class="col-xs-4">电话</li>
+					<li class="col-xs-4">短信</li>
+					<li class="col-xs-4">通讯录</li>
+					<li class="col-xs-4">课堂</li>
+					<li class="col-xs-4">课程表</li>
+					<li class="col-xs-4">信息</li>
+					<li class="col-xs-4">游戏</li>
+					<li class="col-xs-4">办公</li> 
+				</ul>
+			</div>
+			<div class="footer">自动撑到底部</div>
+		</div>  
+
+		<div class="container-flex">
+			<div class="header">header</div>
+			<div class="content">
+				<div class="row demo">
+					<div class="grid-cell">
+						<div class="img-box">
+							<img src="http://bbs.369cloud.com/data/attachment/block/c4/c4e547855109f84cff0557c699125669.jpg" alt="">
+							<p>hellow</p>
+						</div>
+					</div>
+					<div class="grid-cell">
+						<div class="img-box">
+							<img src="http://bbs.369cloud.com/data/attachment/block/be/bebb8d8814d44c5fa41d819741ccdf93.jpg" alt="">
+							<p>hellow</p>
+						</div>
+					</div>
+					<div class="grid-cell">
+						<div class="img-box">
+							<img src="http://bbs.369cloud.com/data/attachment/block/be/bebb8d8814d44c5fa41d819741ccdf93.jpg" alt="">
+							<p>hellow</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">footer</div>
+		</div>
+		
+		<div class="container-flex">
+			
+			<section class="content">
+				<h3>左侧固定，右侧自适应</h3>
+				<div class="row demo">
+					<span class="col-xs-2">左侧固定</span>
+					<div class="grid-cell">
+						<p>右侧自适应</p>
+					</div>
+				</div>
+
+				<h3>右侧固定，左侧自适应</h3>
+				<div class="row demo">
+					<div class="grid-cell">
+						<p>左侧自适应</p>
+					</div>
+					<span class="col-xs-2">右侧固定</span>
+				</div>
+
+				<h3>等分布局</h3>
+				<div class="row demo">
+					<div class="grid-cell">
+						<p>左</p>
+					</div>
+					<div class="grid-cell">
+						中
+					</div>	
+					<div class="grid-cell">
+						右
+					</div>
+				</div>
+			</section>
+		</div>   
+		
+	<script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>		
+	</body>
+</html>

@@ -1,0 +1,67 @@
+/* 按钮对象 Button [LY]
+ * @param  @padding               内边距[1rem 1rem,1rem 1rem 1rem 1rem]
+ * @param  @margin                外边距[1rem 1rem,1rem 1rem 1rem 1rem]
+ * @param  @width                 宽[auto;1em;100%]
+ * @param  @height                高[auto;1em;100%]
+ * @param  @bg-color              背景颜色[none,#ffffff]
+ * 
+ * */
+.ui-div{
+    .Div(0;0;100%;auto;none);
+}
+
+
+.ui-mobile {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: none;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid #000000;
+  white-space: nowrap;
+  color: #ffffff;
+  background-color: #0080c0;
+  padding: 0.1em 0.1em;
+  font-size: 1em;
+  line-height: 1em;
+  -webkit-user-select: none;
+  -webkit-border-radius: 0.4em;
+  border-radius: 0.4em;
+  -webkit-box-shadow: 0px 5px 0px #005e8d, 0px 5px 0px #005e8d;
+  box-shadow: 0px 5px 0px #005e8d, 0px 5px 0px #005e8d;
+}
+.ui-mobile:focus,
+.ui-mobile.focus,
+.ui-mobile:visited,
+.ui-mobile.visited {
+  color: #ffffff;
+  background-color: #0080c0;
+  border-color: #000000;
+}
+.ui-mobile:active,
+.ui-mobile.active {
+  color: #ffffff;
+  background-color: #006ca1;
+  border-color: #000000;
+  background-image: none;
+}
+.ui-mobile.disabled:focus,
+.ui-mobile[disabled]:focus,
+fieldset[disabled] .ui-mobile:focus,
+.ui-mobile.disabled.focus,
+.ui-mobile[disabled].focus,
+fieldset[disabled] .ui-mobile.focus {
+  background-color: #0080c0;
+  border-color: #000000;
+}
+/*图片
+ * @param  @width                 宽
+ * @param  @height                高
+ * @param  @border-radius         圆角
+ */
+.ui-img{
+    .Img(100%;auto;0)
+}

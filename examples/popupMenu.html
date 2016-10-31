@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+    <link rel="stylesheet" href="../dist/css/font-awesome.css">
+    <title>buttons</title>
+    <style type="text/css">
+    body {
+        font-family: "微软雅黑" !important;
+        background-color: #eeeeee;
+    }
+    
+    
+    </style>
+</head>
+
+<body>
+    <header class="ui-top-bar">
+        <a class="ui-top-bar-callback">
+	 		<i class="iconfont icon-angleleft"></i> 
+        </a>
+        <h1 class="ui-top-bar-title">PopupMenu</h1>
+        <a class="ui-top-bar-link">
+        	
+        </a>
+    </header>
+    <div style="margin-top:3rem;padding: 1em;background-image: url(img/3.jpg);height:90% ;">
+	    <div class="ui-popupmenugroup">
+	    	<button  class="ui-btn" data-toggle="menuBtn" data-target="#menupop">
+	    		左弹出菜单
+	    	</button>
+	    	<div id="menupop"  data-type="menuPop">
+				<ul>
+					<li>栏目1</li>
+		    		<li>栏目2</li>
+		    		<li>栏目3</li>
+				</ul>
+			</div>
+	    </div>
+	    <div class="ui-popupmenugroup2">
+	    	<button class="ui-btn" data-toggle='menuBtn' data-target="#menupop2">
+	    		右弹出菜单
+	    	</button>
+	    	<div id="menupop2" data-type="menuPop">
+				<ul>
+					<li>栏目1</li>
+		    		<li>栏目2</li>
+		    		<li>栏目3</li>
+				</ul>
+			</div>
+	    </div>
+	    
+	    
+    	<button class="ui-btn" data-toggle='menuBtn' data-target="#menupop3">
+    		弹出中间菜单
+    	</button>
+    	<div id="menupop3" class="ui-popupmenu">
+			<ul>
+				<li>栏目1</li>
+	    		<li>栏目2</li>
+	    		<li class="active">栏目3</li>
+			</ul>
+		</div>
+	    
+    <div >
+    	<img  src=""/>
+    </div>
+    </div>
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+    <script>
+    $(function() {
+    	$("#menupop").on("popupmenu:show",function(e){
+	        console.log("左弹出菜单监听开始----");
+	    }).on("popupmenu:hide",function(e,index){
+	          console.log("左弹出菜单监听关闭----");
+	          console.log(index);
+	    })
+	    
+	    $("#menupop2").on("popupmenu:show",function(e){
+	         console.log("监听开始-menupop2---");
+	    }).on("popupmenu:hide",function(e,index){
+	          console.log("监听关闭-menupop2---");
+	          console.log(index);
+	    })
+	    
+	    $("#menupop3").on("popupmenu:show",function(e){
+	         console.log("弹出中间菜单监听开始---");
+	    }).on("popupmenu:hide",function(e,index){
+	          console.log("弹出中间菜单监听关闭---");
+	          console.log(index);
+	    })
+    });
+    
+     
+    </script>
+</body>
+
+</html>

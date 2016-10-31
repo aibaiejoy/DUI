@@ -1,0 +1,24 @@
+/* Popupmenu  弹出菜单
+ * @param   @menu-type          弹出菜单类型[pop,downleft,downright]
+ * @param   @memu-top           弹出菜单距离顶部距离[pop无效]
+ * @param   @bg-color           背景颜色
+ * @param   @check-bg-color     选中和点击背景颜色
+ * @param   @check-opacity      选中和点击透明度
+ * @param   @width              宽度
+ * @param   @border-radius      圆角
+ * @param   @padding-vertical   上下边距
+ * @param   @padding-horizontal 左右边距
+ * @param   @border-color       边线颜色
+ * @param   @text-align         文字水平位置
+ * @param   @color              文字颜色
+ * @param   @font-size          文字大小
+ */ 
+.ui-popupmenu{
+    .Popupmenu(pop;none;#ffffff;#ffffff;0.7;7em;4px;0.5em;1em;#cfcfcf;center;#000;1em); 
+}
+.ui-popupmenugroup{
+    .Popupmenu(downleft;2.5em;#535353;#343434;1;7em;0px;0.5em;1em;#797979;left;#ffffff;1em);
+}
+.ui-popupmenugroup2{
+    .Popupmenu(downright;2.5em;#535353;#343434;1;7em;0px;0.5em;1em;#797979;center;#ffffff;1em);  
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+    
+    <title>buttons</title>
+    <style type="text/css">
+    body {
+        font-family: "微软雅黑" !important;
+        background-color: #eeeeee;
+    }
+    
+    .padd-default {
+        padding: 0.5em;
+    }
+    
+    .padd-lr-default {
+        padding: 0 .5em;
+    }
+    
+    .mar-t-lg {
+        margin-top: 1em;
+    }
+    
+    .mar-lr-lg {
+        margin: 0 1em;
+    }
+    
+    .mar-t-default {
+        margin-top: .5em;
+    }
+    
+    .box {
+        display: -webkit-box !important;
+        display: box !important;
+        display: -webkit-flex;
+        display: flex;
+        position: relative;
+    }
+    /*垂直方向排列方式*/
+    
+    .box-align-start {
+        -webkit-box-align: start;
+        box-align: start;
+    }
+    
+    .box-align-center {
+        -webkit-box-align: center;
+        box-align: center;
+    }
+    
+    .box-align-end {
+        -webkit-box-align: end;
+        box-align: end;
+    }
+    /*水平方向排列方式*/
+    
+    .box-pack-start {
+        -webkit-box-pack: start;
+        box-pack: start;
+    }
+    
+    .box-pack-center {
+        -webkit-box-pack: center;
+        box-pack: center;
+    }
+    
+    .box-pack-end {
+        -webkit-box-pack: end;
+        box-pack: end;
+    }
+    /*平均分配*/
+    
+    .box-pack-justify {
+        -webkit-box-pack: justify;
+        box-pack: justify;
+    }
+    /*垂直排列*/
+    
+    .box-orient-vertical {
+        -webkit-box-orient: vertical;
+        box-orient: vertical;
+    }
+    /*反向排列*/
+    
+    .box-direction-reverse {
+        -webkit-box-direction: reverse;
+        box-direction: reverse;
+    }
+    /*盒子伸缩比例*/
+    
+    .box-flex-1 {
+        position: relative;
+        -webkit-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+    
+    </style>
+</head>
+
+<body style=" background-color: #fff;">
+    <div class="ui-top-bar-holder">
+    <header class="ui-topbar">
+        <a class="ui-top-bar-callback">
+    	 		<i class="iconfont icon-angleleft"></i> 
+            </a>
+        <h1 class="ui-top-bar-title">loading</h1>
+        <a class="ui-top-bar-link"></a>
+    </header>
+</div>
+    <div style="padding: 1em;margin-top: 3rem;">
+	    <div onclick="loadShow()">
+	    	打开loading
+	    </div>
+	    <div onclick="loadHidden()">
+	    	关闭loading
+	    </div>
+    </div>
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+    <script>
+    	//打开loading
+    	function loadShow(){
+			/* $.showLoading   			loading提示框
+	    	 * css:"ui-loading"       	默然样式
+	    	 * show:true                是否显示[true显示(默认)，false隐藏]
+	    	 * type:1       			动画类型[false(无动画),1,2,3,4,5,6,7]
+	    	 * meg:'加载中...'          提示信息[false:无提示信息]
+	    	 * duration:false           动画时间[false:表示不自动关闭，用户自己关闭]
+	    	 */
+    		$.showLoading({
+    			type:7
+    		});
+    	}
+    	//关闭loading
+    	function loadHidden(){
+    		$.showLoading({
+    			show:false
+    		});
+    	}
+    </script>
+</body>
+
+</html>

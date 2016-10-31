@@ -1,0 +1,18 @@
+.slideContainer(@slide-width: 100%, @slide-minHeiht: 150px) {
+    width: @slide-width;
+    position: relative;
+    overflow: hidden;
+    .slide-ul {
+        display: block;
+        .slide-li {
+            display: block;
+            float: left;
+            position: relative;
+            width: 325px;
+            min-height: @slide-minHeiht;
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+}

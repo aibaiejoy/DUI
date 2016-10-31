@@ -1,0 +1,215 @@
+/* ui-onelinelists   外容器对象
+ * @param    @margin-left               左外边距                                                                                            1rem
+ * @param    @border-color              下边框颜色[none,颜色值]                  #dbdbdb
+ * @param    @background                背景颜色                                                                                            #ffffff
+ * @param    @padding-vertical          上下边距                                                                                            1rem
+ * @param    @box-direction             子元素排列方式[normal,reverse,inherit]   normal
+ */
+/* .onelinelists-img 
+ * @param    @padding-left               左边距                                                                                               0
+ * @param    @padding-right              右边距                                                                                               0
+ * @param    @border-radius              圆角                                                                                                 0.3rem
+ * @param    @width                      宽度                                                                                                 1.6rem
+ */
+/* onelinelists-content
+ * @param    @padding-left                      左边距                                                                     1rem
+ * @param    @padding-right                     右边距                                                                     1rem
+ * @param    @margin-top                        上外边距                                                                 0
+ * @param    @left-size                         大小[大小]                    1rem
+ * @param    @left-color                        颜色                                                                          #000000
+ * @param    @line                              几行                                                                          1
+ * @param    @is-weight                         是否加粗[true,false]          false
+ * @param    @line-height                       行高                                                                        1.6rem
+ * @param    @is-box-f1                         伸缩盒比例[true,false]        true                                                                     null
+ */
+/* onelinelists-right
+ * @param    @padding-left               左边距                                                                                    0
+ * @param    @padding-right              右边距                                                                                    1rem
+ * @param    @size                       大小                                                                                         1.2rem
+ * @param    @color                      颜色                                                                                          #cccccc
+ */
+.ui-onelinelists{
+    .ListviewPanel(0;@listview-default-border;@listview-default-bg;@padding-md;normal);
+}
+.onelinelists-img{
+    .ListviewImg(1em;0;@border-radius-xs;1.6em);
+}
+.onelinelists-content{
+    .ListviewBody(@padding-md;@padding-md;0;@font-size-md;@listview-default-color;1;false;1.6em;true);
+}
+.onelinelists-right{
+    .ListviewRight(0;@padding-md;@font-size-md;#cccccc);
+}
+
+/* ui-twolinelists   外容器对象
+ * @param    @margin-left               左外边距                                                                                            0
+ * @param    @border-color              下边框颜色[none,颜色值]                  #dbdbdb
+ * @param    @background                背景颜色                                                                                             #ffffff
+ * @param    @padding-vertical          上下边距                                                                                            0.4rem
+ * @param    @box-direction             子元素排列方式[normal,reverse,inherit]   normal
+ */
+/* .twolinelists-img
+ * @param    @padding-left               左边距                                                                                     1em
+ * @param    @padding-right              右边距                                                                                     0
+ * @param    @border-radius              圆角                                                                                         50%
+ * @param    @width                      宽度                                                                                         2.5em
+ */
+/* .twolinelists-contentPanel
+ * @param    @padding-left                      左边距                        0.8em
+ * @param    @padding-right                     右边距                        0.8em
+ */
+/* twolinelists-title
+ * @param    @padding-left                      左边距                                                              1rem
+ * @param    @padding-right                     右边距                                                             1rem
+ * @param    @margin-top                        上外边距                                                          0
+ * @param    @left-size                         大小[大小]                 1rem
+ * @param    @left-color                        颜色                                                                   #000000
+ * @param    @line                              几行                                                                   1
+ * @param    @is-weight                         是否加粗[true,false]       false
+ * @param    @line-height                       行高                                                                1rem
+ * @param    @is-box-f1                         伸缩盒比例[true,false]      true
+ * @param    @is-right                          是否有右边[true,false]      true
+ * @param    @right-size                        大小[大小]                  0.75rem
+ * @param    @right-color                       颜色                                                                  #cccccc
+ */
+/* twolinelists-body
+ * @param    @padding-left                      左边距                                                         1rem
+ * @param    @padding-right                     右边距                                                         1rem
+ * @param    @margin-top                        上外边距                                                     0.3rem
+ * @param    @left-size                         大小[大小]                0.8125rem
+ * @param    @left-color                        颜色                                                              #cccccc
+ * @param    @line                              几行                                                              1
+ * @param    @is-weight                         是否加粗[true,false]       false
+ * @param    @line-height                       行高                                                              1rem
+ * @param    @is-box-f1                         伸缩盒比例[true,false]      true                                                                  null
+ */
+.ui-twolinelists{
+    .ListviewPanel(0;@listview-default-border;@listview-default-bg;@padding-xs;normal);   
+}
+.twolinelists-img{
+    .ListviewImg(1em;0;@border-radius-circular;2.5em);
+}
+.twolinelists-contentPanel{
+    .ListviewContentPanel(0.8em;0.8em);
+}
+.twolinelists-title{
+    .ListviewTitle(0;0;0;@font-size-md;@listview-default-color;1;false;1em;true;true;@font-size-xs;#cccccc);
+}
+.twolinelists-body{
+    .ListviewBody(0;0;@margin-xxs;@font-size-sm;@listview-grag-color;1;false;1em;true);
+}
+/* ui-threelinelists   外容器
+ * @param    @margin-left               左外边距                                                                                           0
+ * @param    @border-color              下边框颜色[none,颜色值]                  #dbdbdb
+ * @param    @background                背景颜色                                                                                            #ffffff
+ * @param    @padding-vertical          上下边距                                                                                            0.4em
+ * @param    @box-direction             子元素排列方式[normal,reverse,inherit]   normal
+ */
+/* .threelinelists-img 图片
+ * @param    @padding-left               左边距                                                                                                1em
+ * @param    @padding-right              右边距                                                                                                 0
+ * @param    @border-radius              圆角                                                                                                     0.3em
+ * @param    @width                      宽度                                                                                                      3.2em
+ */
+/* .threelinelists-contenPanel
+ * @param    @padding-left                      左边距                        0.8em
+ * @param    @padding-right                     右边距                        0.8em
+ */
+/* threelinelists-title 标题
+ * @param    @padding-left                      左边距                                                                         1em
+ * @param    @padding-right                     右边距                                                                         1em
+ * @param    @margin-top                        上外边距                                                                    0
+ * @param    @left-size                         大小[大小]                     1em
+ * @param    @left-color                        颜色                                                                              #000000
+ * @param    @line                              几行                                                                              1
+ * @param    @is-weight                         是否加粗[true,false]           false
+ * @param    @line-height                       行高                                                                              1em
+ * @param    @is-box-f1                         伸缩盒比例[true,false]          true                                                                                 null
+ */
+/* threelinelists-body 内容
+ * @param    @padding-left                      左边距                                                             1rem
+ * @param    @padding-right                     右边距                                                             1rem
+ * @param    @margin-top                        上外边距                                                         0.5rem
+ * @param    @left-size                         大小[大小]                 0.8125rem
+ * @param    @left-color                        颜色                                                                  #cccccc
+ * @param    @line                              几行                                                                   1
+ * @param    @is-weight                         是否加粗[true,false]       false
+ * @param    @line-height                       行高                                                                  1em
+ * @param    @is-box-f1                         伸缩盒比例[true,false]      true                                                                   null
+ */
+/* threelinelists-remarks 备注
+ * @param    @padding-left                      左边距                                     1rem
+ * @param    @padding-right                     右边距                                     1rem
+ * @param    @margin-top                        上外边距                                  0
+ * @param    @left-size                         大小[大小]                 0.625em
+ * @param    @left-color                        颜色                                          #cccccc
+ * @param    @line                              几行                                          1
+ * @param    @is-weight                         是否加粗[true,false]       false
+ * @param    @line-height                       行高                                          1em
+ * @param    @is-box-f1                         伸缩盒比例[true,false]      true
+ * @param    @is-right                          是否有右边[true,false]      true
+ * @param    @right-size                        大小[大小]                  0.625em
+ * @param    @right-color                       颜色                                          #cccccc
+ */
+
+.ui-threelinelists{
+    .ListviewPanel(0;@listview-default-border;@listview-default-bg;@padding-xs;normal);
+    
+}
+.threelinelists-img{
+    .ListviewImg(1em;0;@border-radius-xs;3.2em);
+}
+.threelinelists-contenPanel{
+    .ListviewContentPanel(0.8em;0.8em);
+}
+.threelinelists-title{
+    .ListviewBody(0;0;0;@font-size-md;@listview-default-color;1;false;1em;true);
+}
+.threelinelists-body{
+    .ListviewBody(0;0;@margin-sm;@font-size-sm;@listview-grag-color;2;false;1em;true);
+}
+.threelinelists-remarks{
+    .ListviewTitle(0;0;0;@font-size-xxs;#cccccc;1;false;1em;true;true;@font-size-xxs;#cccccc);
+}
+
+
+/* ui-swipeout-btn     滑动删除按钮对象
+ * @param    @bg-color                  背景颜色                             #bfbfbf
+ * @param    @padding-horizontal        左右边距                             1rem
+ * @param    @size                      大小[大小]              1rem
+ * @param    @color                     颜色                                    #fff
+ * @param    @is-weight                 是否加粗[true,false]    false
+ */
+/* ui-swipeout-delete     滑动删除按钮对象
+ * @param    @bg-color                  背景颜色                             #ff0000
+ * @param    @padding-horizontal        左右边距                             1rem
+ * @param    @size                      大小[大小]              1rem
+ * @param    @color                     颜色                                    #fff
+ * @param    @is-weight                 是否加粗[true,false]    false
+ */
+.ui-listview-swipeout{
+    display: -webkit-box !important;
+    display: box !important;
+    display: -webkit-flex;
+    display: flex;
+    position: relative;
+    background-color: #FFFFFF;
+    .ui-swipeout-left{
+        display: -webkit-box !important;
+        display: box !important;
+        display: -webkit-flex;
+        display: flex;
+        position: relative;
+        background-color: #FFFFFF;
+    }
+    .ui-swipeout-btn{
+        .SwipeoutListviewBtn(#bfbfbf;1em;1em;#fff;false);    
+    }
+    .ui-swipeout-delete{
+        .SwipeoutListviewBtn(#ff0000;1em;1em;#fff;false);   
+    }
+} 
+
+
+
+

@@ -1,0 +1,226 @@
+/* ActionSheet [LY]
+ * @param  @opacity                 透明度
+ * @param  @padding-vertical        上下边距
+ * @param  @padding-horizontal      左右边距
+ * @param  @bg-color                背景颜色
+ * @param  @check-bg-color          选中背景颜色
+ * @param  @border-radius           圆角弧度
+ * @param  @border-color            边框颜色
+ * @param  @btn-height              按钮高度
+ * @param  @font-size               字体大小
+ * @param  @color                   字体颜色
+ * @param  @cancel-margin-top       取消按钮距上边距
+ */
+.ActionSheet(@opacity;@padding-vertical;@padding-horizontal;@bg-color;@check-bg-color;@border-radius;@border-color;@btn-height;@font-size;@color;@cancel-margin-top){
+    position:fixed;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;  
+    z-index:9;
+    padding:@padding-vertical @padding-horizontal;
+    display: none;
+    &.inactive{
+        background-color: rgba(0,0,0,0);
+        .animation(actionSheet_inactive2 0.3s 1 ease-in-out);
+    }
+    &.active{
+        background-color: rgba(0,0,0,@opacity);
+        .animation(actionSheet_active2 0.3s 1 ease-in-out);
+    }
+    @-webkit-keyframes actionSheet_active2{
+        0% {background-color: rgba(0,0,0,0);display: none;}
+        100% {background-color: rgba(0,0,0,@opacity);display: block;}
+    }
+    @-webkit-keyframes actionSheet_inactive2{
+        0% {background-color: rgba(0,0,0,@opacity);display: block;}
+        100% {background-color: rgba(0,0,0,0);display: none;}
+    }
+    &.inactive div[data-type=action-panel]{
+        position:fixed;
+        left: @padding-horizontal;
+        right: @padding-horizontal;
+        bottom: @padding-vertical;
+        z-index:99;
+        .Opacity(1);
+        -webkit-transform:translate(0rem,0rem) rotate(0deg) scale(1,1);
+        .animation(actionSheet_inactive 0.3s 1 ease-in-out);
+    }
+    &.active div[data-type=action-panel]{
+        position:fixed;
+        left: @padding-horizontal;
+        right: @padding-horizontal;
+        bottom: @padding-vertical;
+        z-index:99;
+        .Opacity(1);
+        -webkit-transform:translate(0rem,0rem) rotate(0deg) scale(1,1);        
+        .animation(actionSheet_active 0.3s 1 ease-in-out);
+    }
+    & ul{
+        position: relative;
+        top: 0;
+        left: 0;
+        font-size: @font-size;
+        color: @color;
+        border-radius: @border-radius;
+        background-color: @bg-color; 
+    }
+    & ul li{
+        border-bottom: 1px solid @border-color;
+        height: @btn-height;
+        line-height: @btn-height;
+        vertical-align: middle;
+        text-align: center;
+    }
+    & ul li:last-child{
+        border-bottom: none;
+    }
+    & ul li:first-child.active,
+    & ul li:first-child:active{
+        .border-top-radius(@border-radius);
+    }
+    & ul li:last-child.active,
+    & ul li:last-child:active{
+        .border-bottom-radius(@border-radius);
+    }
+    & div[data-type=cancel-btn]{
+        position: relative;
+        top: @cancel-margin-top;
+        left: 0;
+        .Opacity(1);
+        border-radius: @border-radius;
+        height: @btn-height;
+        line-height: @btn-height;
+        vertical-align: middle;
+        text-align: center;
+        background-color: @bg-color;   
+        z-index:99;
+        font-size: @font-size;
+        color: @color;
+    }
+    & ul li:active,
+    & ul li.active,
+    & div[data-type=cancel-btn]:active,
+    & div[data-type=cancel-btn].active{
+       background-color: @check-bg-color; 
+    }
+}
+@-webkit-keyframes actionSheet_active{
+    0% {
+        -webkit-transform:translate(0rem,30rem);
+    }
+    100% { 
+        -webkit-transform:translate(0rem,0rem);
+    }
+}
+@-webkit-keyframes actionSheet_inactive{
+    0% {
+        -webkit-transform:translate(0rem,0rem);
+    }
+    100% { 
+        -webkit-transform:translate(0rem,30rem);
+    }
+}
+
+
+
+/* ActionSheet [LY]
+ * @param  @pop-opacity             遮罩透明度
+ * @param  @ul-rgba                 弹出菜单的rgba值
+ * @param  @padding-vertical        上下边距
+ * @param  @li-padding-vertical     按钮上下边距
+ * @param  @check-bg-color          选中背景颜色[false]
+ * @param  @btn-width               按钮宽度
+ * @param  @img-width               图片宽度
+ * @param  @font-height             字体高度
+ * @param  @font-size               字体大小
+ * @param  @color                   字体颜色
+ */
+.ActionSheetShare(@pop-opacity;@ul-rgba;@padding-vertical;@li-padding-vertical;@check-bg-color;@btn-width;@img-width;@font-height;@font-size;@color){
+    position:fixed;
+    top: 0;
+    bottom:0;
+    left: 0;
+    right: 0;  
+    z-index:9;
+    display: none;
+    &.inactive{
+        background-color: rgba(0,0,0,0);
+        .animation(actionSheetShare_inactive2 0.3s 1 ease-in-out);
+    }
+    &.active{
+        background-color: rgba(0,0,0,@pop-opacity);
+        .animation(actionSheetShare_active2 0.3s 1 ease-in-out);
+    }
+    @-webkit-keyframes actionSheetShare_active2{
+        0% {background-color: rgba(0,0,0,0);display: none;}
+        100% {background-color: rgba(0,0,0,@pop-opacity);display: block;}
+    }
+    @-webkit-keyframes actionSheetShare_inactive2{
+        0% {background-color: rgba(0,0,0,@pop-opacity);display: block;}
+        100% {background-color: rgba(0,0,0,0);display: none;}
+    }
+    & ul{
+        padding:@padding-vertical 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: @ul-rgba;
+    }
+    &.inactive ul{
+        -webkit-transform:translate(0rem,0rem) rotate(0deg) scale(1,1);
+        .animation(actionSheetShare_inactive 0.3s 1 ease-in-out); 
+    }
+    &.active ul{
+        -webkit-transform:translate(0rem,0rem) rotate(0deg) scale(1,1);
+        .animation(actionSheetShare_active 0.3s 1 ease-in-out);
+    }
+    & ul li{
+        list-style:none;
+        padding: 0;
+        margin: 0;
+        @btn-height: @img-width + @font-height+@li-padding-vertical*2;
+        padding:@li-padding-vertical 0;
+        height: @btn-height;
+        width: @btn-width;
+        vertical-align: middle;
+        text-align: center;
+        display:inline-block;
+        float:left;       
+    }
+    & when not(@check-bg-color=false){
+        & ul li:active,
+        & ul li.active{
+           background-color: @check-bg-color; 
+        }
+    }
+    & ul li img{
+        width: auto;
+        height: @img-width;
+    }
+    & ul li span{
+        display: block;
+        width: 100%;
+        font-size: @font-size;
+        color: @color;
+        height:@font-height ;
+        line-height: @font-height;
+    }
+}
+@-webkit-keyframes actionSheetShare_active{
+    0% {
+        -webkit-transform:translate(0rem,20rem);
+    }
+    100% { 
+        -webkit-transform:translate(0rem,0rem);
+    }
+}
+@-webkit-keyframes actionSheetShare_inactive{
+    0% {
+        -webkit-transform:translate(0rem,0rem);
+    }
+    100% { 
+        -webkit-transform:translate(0rem,20rem);
+    }
+}

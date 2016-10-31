@@ -1,0 +1,42 @@
+.ui-progress{
+	//@bg:#cacaca, @height:1px, @radius:1px
+	/*
+		@bg:#cacaca, 背景
+		@height:1px, 高度
+		@radius:1px	圆角
+		@martop:36px 外边距
+	*/
+	.Progress(#cacaca, 2px, 1px, 36px);
+	
+	/*
+		支持两个参数，
+		@bg:#0195ff, 背景颜色
+		@radius:1px 圆角
+	*/ 
+	.progress-bar{
+		.ProgressBar(#0195ff, 1px);
+	};
+
+	/*
+		@width:10px, 宽度
+		@height:10px, 高度
+		@borderColor:#0196fd, 边框颜色
+		@bgColor:#0196fd 背景颜色
+	*/
+	.progress-holder{
+		.ProgressHolder(12px, 12px, #0196fd, #fff);
+	};
+	.progress-holder-disc{
+		.ProgressHolder(12px, 12px, #0196fd, #0196fd);
+	}
+
+	/*
+		@borderColor:#ddd, 边框颜色
+		@bgColor:#fff, 背景颜色
+		@isShow:false，是否显示
+	*/
+	.progress-holder-tip{
+		.ProgressHolderTip(#ddd, #fff, true);
+	}
+}
+

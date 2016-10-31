@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../dist/css/d6.css">
+    <link rel="stylesheet" href="../dist/css/font-awesome.css">
+    <title>buttons</title>
+    <style type="text/css">
+    body {
+        font-family: "微软雅黑" !important;
+        background-color: #eeeeee;
+    }
+    </style>
+</head>
+
+<body>
+    <div  class="ui-fullpage">
+		<div class="fullpage-page">
+            <img  src="img/1.png" style="width: 100%;height: 100%;"/>
+        </div>
+        <div class="fullpage-page">
+            <img  src="img/2.png" style="width: 100%;height: 100%;"/>
+        </div>
+        <div class="fullpage-page">
+            <img  src="img/3.png" style="width: 100%;height: 100%;"/>
+        </div>
+        <div class="fullpage-page">
+            <img  src="img/4.png" style="width: 100%;height: 100%;"/>
+        </div> 	
+    </div>
+   
+    <script src="../assets/libs/zepto.js"></script>
+    <script src="../dist/js/d6.js"></script>
+</body>
+<script>
+	$(function(require){
+		/*
+		 * loop: false,//循环
+		 * isHandSlide:true,//是否手动滑动
+         * dots: false,//是否要圆点
+         * arrow: false,//是否要底部图标
+         * fullPage: true,//是否整屏
+		 */
+        var fp = $('.ui-fullpage').fullpage({
+            loop: true,
+            isHandSlide:false,
+            dots: true,
+            arrow: true,
+			fullPage: true
+        });
+        $('.ui-fullpage').on('beforeChange',function(e,cur,next){
+            console.log('beforeChange');
+            console.log(cur);
+            console.log(next);
+        }).on('change',function(e,cur,next){
+        	console.log('change');
+            console.log(cur);
+            console.log(next);
+        }).on('afterChange',function(e,cur){
+        	console.log('afterChange');
+            console.log(cur);
+        })
+//      setInterval(function(){
+//         fp.next();//自动滚屏
+//      },2000);
+    })
+</script>
+</html>
